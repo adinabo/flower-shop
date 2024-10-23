@@ -1,0 +1,6 @@
+asgiref==3.8.1
+Django==5.1.2
+django-allauth==65.0.2
+pytz==2024.2
+setuptools==75.2.0
+sqlparse==0.5.1

@@ -1,0 +1,122 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #4b4b4b;
+    font-family: 'Lato', sans-serif;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #5a5a5a;
+}
+
+/* Logo styling */
+.logo-font {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6b4f4f; 
+    font-family: 'Playfair Display', serif;
+}
+
+/* Main logo container */
+.main-logo-link {
+    width: fit-content;
+}
+
+/* Button styling */
+.shop-now-button, .btn-black {
+    background: #6b4f4f; 
+    color: #fff;
+    min-width: 260px;
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #5a3d3d; 
+    color: #fff;
+}
+
+.text-black {
+    color: #4b4b4b !important; 
+}
+
+.border-black {
+    border: 1px solid #6b4f4f !important; 
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+
+/*  padding and soft borders */
+.container, .header-container, .footer {
+    padding: 1rem;
+    border-top: 2px solid #d7c9c9;
+    border-bottom: 2px solid #d7c9c9;
+}
+
+/* Footer styling */
+.footer {
+    background: #f8f4f4;
+    color: #6b4f4f;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Text accent colors */
+h1, h2, h3, h4, h5, h6 {
+    color: #6b4f4f;
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    color: #6b4f4f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a3d3d;
+    text-decoration: underline;
+}

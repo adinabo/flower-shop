@@ -3,22 +3,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+    {% block extra_meta %}{% endblock %}
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+    {% block extra_css %}{% endblock %}
 
     {% block corejs %}
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -26,74 +23,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+    {% block extra_js %}{% endblock %}
 
     <title>Petalia {% block extra_title %}{% endblock %}</title>
   </head>
-  <body> 
-    <!--
-    <header class="container-fluid fixed-top">
-        <div class="row">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Petalia</strong></h2>
-                </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header> -->
+  <body>
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
@@ -102,7 +36,7 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
-                <a href="index.html" class="navbar-brand">
+                <a href="{% url 'home' %}" class="navbar-brand">
                     <img class="img-fluid" src="{% static 'media/logo.png' %}" alt="Logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -110,20 +44,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="product.html" class="nav-item nav-link">Products</a>
-                        <a href="store.html" class="nav-item nav-link">Store</a>
+                        <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'products' %}" class="nav-item nav-link">Products</a>
+                        <a href="{% url 'store' %}" class="nav-item nav-link">Store</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="blog.html" class="dropdown-item">Blog Article</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="{% url 'features' %}" class="dropdown-item">Features</a>
+                                <a href="{% url 'blog' %}" class="dropdown-item">Blog Article</a>
+                                <a href="{% url 'testimonials' %}" class="dropdown-item">Testimonial</a>
+                                <a href="{% url '404' %}" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
                         <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
@@ -134,12 +68,8 @@
     </div>
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    {% block content %}{% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
-
-    
+    {% block postloadjs %}{% endblock %}
   </body>
 </html>

@@ -84,6 +84,12 @@
 
 
 /*** Navbar ***/
+
+.img-fluid {
+    max-width: 60%;
+    height: auto;
+}
+
 .sticky-top {
     top: -150px;
     transition: .5s;

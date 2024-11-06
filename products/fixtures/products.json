@@ -19,7 +19,7 @@
             "description": "Elegant white lilies, ideal for bridal bouquets and wedding decor.",
             "price": 49.99,
             "image": "/media/products/bridal_white_lily.jpg",
-            "category": 1,  // assuming 'bridal' category has pk=1
+            "category": 1,  
             "rating": 5
         }
     },
@@ -31,7 +31,7 @@
             "description": "A lovely bouquet of fresh pink tulips, perfect for spring celebrations.",
             "price": 24.99,
             "image": "/media/products/pink_tulip_bouquet.jpg",
-            "category": 2,  // assuming 'bouquets' category has pk=2
+            "category": 2, 
             "rating": 4
         }
     },
@@ -43,7 +43,7 @@
             "description": "A delicate corsage made with fresh roses, perfect for bridesmaids or the bride.",
             "price": 19.99,
             "image": "/media/products/bridal_rose_corsage.jpg",
-            "category": 1,  // assuming 'bridal' category has pk=1
+            "category": 1, 
             "rating": 4.7
         }
     }

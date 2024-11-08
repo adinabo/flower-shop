@@ -2,56 +2,16 @@
 {% load static %}
 
 {% block page_header %}
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
-    </div>
-    <!-- Spinner End -->
     {{ block.super }}
-    <!-- Carousel Start -->
-    <div class="container-fluid px-0 mb-5 banner">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{% static 'media/banner1.jpg' %}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 text-center">
-                                    <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Petalia</strong></p>
-                                    <h1 class="display-1 text-dark mb-4 animated zoomIn">Your local florist</h1>
-                                    <a href="#" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explore More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{% static 'media/banner2.jpg' %}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 text-center">
-                                    <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Petalia</strong></p>
-                                    <h1 class="display-1 text-dark mb-4 animated zoomIn">Organic & Quality Tea Production</h1>
-                                    <a href="#" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explore More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <!-- Hero Start -->
+    <section class="hero-section d-flex align-items-center text-white bg-primary text-center py-5">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Welcome to Petalia</h1>
+            <p class="lead mb-4">Bringing beauty and freshness to your special moments</p>
+            <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5">Shop Now</a>
         </div>
-    </div>
-    <!-- Carousel End -->
+    </section>
+    <!-- Hero End -->
 {% endblock %}
 
 {% block content %}
@@ -82,4 +42,72 @@
     </div>
 </div>
 <!-- About End -->
+
+ <!-- Collections Section -->
+ <section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Collections</h2>
+        <div class="row g-4">
+            {% for category in product %}
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ category.image_url }}" class="card-img-top" alt="{{ category.title }}" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ category.title }}</h5>
+                        <p class="card-text text-muted">{{ category.description }}</p>
+                        <a href="{% url 'category_detail' category.id %}" class="btn btn-outline-primary">View Collection</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+ <!-- Collections Section end-->
+    <!-- Featured Products Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row g-4">
+                {% for product in featured_products %}
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text text-primary fw-bold">{{ product.price }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <div><i class="bi bi-telephone-fill me-2"></i>+1 (555) 123-4567</div>
+                    <div><i class="bi bi-envelope-fill me-2"></i>info@petalia.com</div>
+                    <div><i class="bi bi-geo-alt-fill me-2"></i>123 Flower Street, Garden City</div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="bi bi-facebook" style="font-size: 24px;"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 24px;"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter" style="font-size: 24px;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">© 2024 Petalia Flowershop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 {% endblock %}

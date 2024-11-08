@@ -9,10 +9,11 @@
             <p class="text-muted">Browse through our variety of bouquets to find what suits you best.</p>
         </div>
     </div>
+
     <div class="row">
         {% for product in products %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card shadow-sm h-100 border-0">
+                <div class="card shadow-lg border-0 product-card">
                     {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}" class="d-block">
                             <img src="{{ product.image.url }}" class="card-img-top img-fluid rounded-top" alt="{{ product.name }}">
@@ -25,11 +26,20 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text text-primary h5">${{ product.price }}</p>
+
                         {% if product.rating %}
                             <p class="small text-muted"><i class="fas fa-star text-warning"></i> {{ product.rating }} / 5</p>
                         {% else %}
                             <p class="small text-muted">No Rating</p>
                         {% endif %}
+
+                        <div class="product-tags">
+                            {% if product.name == "Best Seller" %}
+                                <span class="badge bg-success">Best Seller</span>
+                            {% elif product.name == "New Arrival" %}
+                                <span class="badge bg-info">New Arrival</span>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>

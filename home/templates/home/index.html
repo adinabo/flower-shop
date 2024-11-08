@@ -6,9 +6,9 @@
     <!-- Hero Start -->
     <section class="hero-section d-flex align-items-center text-white bg-primary text-center py-5">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Welcome to Petalia</h1>
+            <h1 class="display-2 fw-bold mb-5 mt-5">Petalia</h1>
             <p class="lead mb-4">Bringing beauty and freshness to your special moments</p>
-            <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5">Shop Now</a>
+            <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5 mt-5">Shop Now</a>
         </div>
     </section>
     <!-- Hero End -->
@@ -21,14 +21,13 @@
             <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
                 <div class="section-title">
                     <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
-                    <h3 class="display-6"> Nestled in the heart of the city, we deliver the essence of nature to your doorstep.</h3>
+                    <h3 class="display-6 mt-2"> We deliver the essence of nature to your doorstep.</h3>
                 </div>
-                <p class="mb-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
+                <p class="mb-4 mt-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
             </div>
         </div>
     </div>
 <!-- About End -->
-
  <!-- Collections Section -->
  <section class="py-5">
     <div class="container">
@@ -71,29 +70,48 @@
         </div>
     </section>
 <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <div><i class="bi bi-telephone-fill me-2"></i>+1 (555) 123-4567</div>
-                    <div><i class="bi bi-envelope-fill me-2"></i>info@petalia.com</div>
-                    <div><i class="bi bi-geo-alt-fill me-2"></i>123 Flower Street, Garden City</div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white"><i class="bi bi-facebook" style="font-size: 24px;"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 24px;"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-twitter" style="font-size: 24px;"></i></a>
-                    </div>
+<footer class="bg-custom-footer text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-telephone-fill me-3"></i> +1 (555) 123-4567</li>
+                    <li><i class="bi bi-envelope-fill me-3"></i> info@petalia.com</li>
+                    <li><i class="bi bi-geo-alt-fill me-3"></i> 123 Flower Street, Garden City</li>
+                </ul>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Follow Us</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white social-icon"><i class="bi bi-twitter"></i></a>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">© 2024 Petalia Flowershop. All rights reserved.</p>
+
+            <!-- Newsletter Section (Optional) -->
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
+                <p>Stay updated with the latest news and promotions from Petalia.</p>
+                <form action="#" method="post">
+                    <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-light w-100">Subscribe</button>
+                </form>
             </div>
         </div>
-    </footer>
+
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.3);">
+        
+        <!-- Footer Bottom -->
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 Petalia Flowershop. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
 
 {% endblock %}

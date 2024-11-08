@@ -1,3 +1,12 @@
+/**********************************************************************Hero*/
+.hero-section {
+}
+
+.hero-section .container {
+  width: 50vh;  /* Set a larger max-width */
+  width: 100%;  /* Ensure full width utilization */
+  padding: 0 15px;  /* Add padding to the left and right */
+}
 
 .hero-section {
     background: url('/media/banner1.jpg') no-repeat center center fixed;
@@ -6,6 +15,35 @@
     background-repeat: no-repeat;
 }
 
+.hero-section h1 {
+    font-family: "Homemade Apple", "Indie Flower", "cursive";
+    font-weight: 500;
+    font-style: normal ;
+    letter-spacing: 1.5rem;
+    font-size: 5rem;
+  }
+
+  body {
+    font-family: 'Merriweather', serif;
+}
+  
+/**********************************************************************Navbar and Footer*/
+.petalia-logo {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem; 
+  color: #6a0dad; 
+  letter-spacing: 1px;
+}
+
+.bg-custom-footer {
+  background-color: rgba(85, 46, 139, 0.668);
+  color: #ffffff; /* Keeps text readable on darker background */
+
+}
+
+/************************************************************************Products****/
 .category-card {
   transition: transform 0.3s ease;
 }
@@ -26,3 +64,9 @@
 .featured-product:hover {
   transform: scale(1.03);
 }
+
+
+/***************************************************************Flower divider/
+
+
+

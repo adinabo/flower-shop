@@ -1,6 +1,6 @@
 
 .hero-section {
-    background: url('/static/media/banner1.jpg') no-repeat center center fixed;
+    background: url('/media/banner1.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

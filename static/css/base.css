@@ -1,6 +1,4 @@
 /**********************************************************************Hero*/
-.hero-section {
-}
 
 .hero-section .container {
   width: 50vh;  /* Set a larger max-width */
@@ -67,16 +65,16 @@
 
 /* Full-width background for the section */
 .full-width-bg {
-  background: linear-gradient(145deg, #f3e8fa, #e8d4f0); /* Lavender gradient */
-  padding: 4rem 0; /* Space around the content vertically */
+  background: linear-gradient(145deg, #f3e8fa, #e8d4f0); 
+  padding: 4rem 0; 
   width: 100%;
 }
 
 /* Container styling to keep content centered */
 .container {
-  max-width: 1140px; /* Keeps the container at a standard width */
-  margin: 0 auto; /* Centers the container horizontally */
-  padding: 0 15px; /* Optional padding */
+  max-width: 1140px; 
+  margin: 0 auto; 
+  padding: 0 15px; 
 }
 
 /* Section title styling */
@@ -100,6 +98,83 @@
 .lavender-title:hover {
   color: #9b6eaf;
   transition: color 0.3s ease;
+}
+/* Styling for the Back to Top button */
+.btt-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #d1b3d8; /* Soft lavender */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btt-button:hover {
+    background-color: #b89ac8; /* Darker lavender on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Link styling for icon alignment */
+.btt-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Styling for the icon */
+.btt-link i {
+    font-size: 1.5rem; /* Icon size */
+    color: #4c3a63; 
+}
+/* Styling for the Back to Top button */
+.btt-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #d1b3d8; /* Soft lavender color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.btt-button:hover {
+  background-color: #b89ac8; /* Darker lavender on hover */
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Link styling for the icon alignment */
+.btt-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Styling for the arrow icon */
+.btt-link i {
+  font-size: 1.2rem; /* Icon size */
+  color: #4c3a63; /* Dark lavender for contrast */
+  transition: color 0.3s ease;
+}
+
+.btt-button:hover i {
+  color: #ffffff; /* White arrow on hover */
 }
 
 /***************************************************************Flower divider/

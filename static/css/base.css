@@ -65,6 +65,42 @@
   transform: scale(1.03);
 }
 
+/* Full-width background for the section */
+.full-width-bg {
+  background: linear-gradient(145deg, #f3e8fa, #e8d4f0); /* Lavender gradient */
+  padding: 4rem 0; /* Space around the content vertically */
+  width: 100%;
+}
+
+/* Container styling to keep content centered */
+.container {
+  max-width: 1140px; /* Keeps the container at a standard width */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 15px; /* Optional padding */
+}
+
+/* Section title styling */
+.lavender-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6a4f99;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Section description styling */
+.section-description {
+  font-size: 1.1rem;
+  color: #7a7099;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Optional hover effect for the title */
+.lavender-title:hover {
+  color: #9b6eaf;
+  transition: color 0.3s ease;
+}
 
 /***************************************************************Flower divider/
 

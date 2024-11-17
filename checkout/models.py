@@ -76,7 +76,7 @@ class OrderLineItem(models.Model):
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-        
-        
-    return f'{self.product.name} (SKU: {self.product.sku}) on order {self.order.order_number}'
+
+
+        return f'{self.product.name} (SKU: {self.product.sku}) on order {self.order.order_number}'
 

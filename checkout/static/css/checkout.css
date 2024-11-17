@@ -1,0 +1,113 @@
+/* General Stripe Element and Input Styling */
+.StripeElement, 
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focused and Active States */
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Autofill Background */
+.StripeElement--webkit-autofill {
+  background-color: #e0ffe0 !important;
+}
+
+/* Placeholder Styling */
+.stripe-style-input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Fieldset Label Styling */
+.fieldset-label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Form Control and Card Element Styling */
+#payment-form .form-control,
+#card-element {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #000;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 10px;
+  transition: border-color 0.2s ease;
+}
+
+#payment-form .form-control:focus,
+#card-element:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+#loading-overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #fff;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .StripeElement, .stripe-style-input {
+    height: 45px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .fieldset-label {
+    font-size: 14px;
+  }
+}

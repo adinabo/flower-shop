@@ -13,22 +13,27 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data in the Stripe PaymentIntent metadata.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user,
+            'username': request.user.username if request.user.is_authenticated else 'Anonymous',
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
+    """
+    Handle the checkout process, including creating the order and Stripe PaymentIntent.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -53,25 +58,15 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id, item_data in bag.items():
+            for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=quantity,
+                    )
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -83,8 +78,7 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(request, 'There was an error with your form. Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -103,8 +97,7 @@ def checkout(request):
         order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+        messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
@@ -118,7 +111,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

@@ -28,47 +28,50 @@
         </div>
     </div>
 <!-- About End -->
- <!-- Collections Section -->
- <section class="py-5">
+ <!-- Collections Section --><section class="py-5">
     <div class="container">
         <h2 class="text-center mb-5">Our Collections</h2>
+
+        <!-- Bouquets Section -->
+        <h3 class="text-center mb-4">Bouquets</h3>
         <div class="row g-4">
-            {% for category in product %}
+            {% for product in bouquets_products %}
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ category.image_url }}" class="card-img-top" alt="{{ category.title }}" style="height: 250px; object-fit: cover;">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">{{ category.title }}</h5>
-                        <p class="card-text text-muted">{{ category.description }}</p>
-                        <a href="{% url 'category_detail' category.id %}" class="btn btn-outline-primary">View Collection</a>
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-muted">${{ product.price }}</p>
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
                     </div>
                 </div>
             </div>
+            {% empty %}
+            <p class="text-center">No products available in this category.</p>
+            {% endfor %}
+        </div>
+
+        <!-- Bridal Section -->
+        <h3 class="text-center my-5">Bridal</h3>
+        <div class="row g-4">
+            {% for product in bridal_products %}
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-muted">${{ product.price }}</p>
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-center">No products available in this category.</p>
             {% endfor %}
         </div>
     </div>
 </section>
  <!-- Collections Section end-->
-    <!-- Featured Products Section -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Products</h2>
-            <div class="row g-4">
-                {% for product in featured_products %}
-                <div class="col-md-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text text-primary fw-bold">{{ product.price }}</p>
-                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
 <!-- Footer -->
 <footer class="bg-custom-footer text-white py-5">
     <div class="container">

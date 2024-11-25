@@ -7,7 +7,6 @@ from .models import Product, Category
 from products.models import Product
 import logging
 
-# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """

@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ redirect_url: redirectUrl })
-            })
+            })            
                 .then(response => {
                     console.log('Response status:', response.status);
                     if (!response.ok) {

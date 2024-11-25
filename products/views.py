@@ -73,14 +73,23 @@ logger = logging.getLogger(__name__)
 def add_to_bag(request, product_id):
     """Add a single quantity of the specified product to the shopping bag."""
     if request.method == "POST":
-        product = get_object_or_404(Product, pk=product_id)
-        bag = request.session.get('bag', {})
-        if str(product_id) in bag:
-            bag[str(product_id)] += 1
-        else:
-            bag[str(product_id)] = 1
-        request.session['bag'] = bag
-        return JsonResponse({'message': f'Added {product.name} to your bag.'}, status=200)
+        try:
+            # Parse the JSON body
+            body = json.loads(request.body)
+            redirect_url = body.get('redirect_url', '/')
+            
+            # Add product to session bag
+            product = get_object_or_404(Product, pk=product_id)
+            bag = request.session.get('bag', {})
+            bag[str(product_id)] = bag.get(str(product_id), 0) + 1
+            request.session['bag'] = bag
+
+            return JsonResponse({'message': f'Added {product.name} to your bag.'}, status=200)
+
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON format.'}, status=400)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
 
     return JsonResponse({'error': 'Invalid request method.'}, status=400)
 

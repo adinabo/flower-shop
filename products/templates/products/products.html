@@ -54,6 +54,8 @@
                             <form method="POST" action="{% url 'add_to_bag_product' product.id %}" class="add-to-cart-form">
                                 {% csrf_token %}
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <p>CSRF Token: {{ csrf_token }}</p>
+                                <p>Current Path: {{ request.path }}</p>
                                 <button type="submit" class="btn btn-primary btn-sm mt-2 add-to-cart-button" data-product-id="{{ product.id }}">
                                     Add to Cart
                                 </button>

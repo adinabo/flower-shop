@@ -1,3 +1,5 @@
+import json 
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
@@ -70,6 +72,7 @@ def product_detail(request, product_id):
 
 logger = logging.getLogger(__name__)
 
+
 def add_to_bag(request, product_id):
     """Add a single quantity of the specified product to the shopping bag."""
     if request.method == "POST":
@@ -92,5 +95,7 @@ def add_to_bag(request, product_id):
             return JsonResponse({'error': str(e)}, status=400)
 
     return JsonResponse({'error': 'Invalid request method.'}, status=400)
+
+    
 
 

@@ -3,16 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
 
-            const productId = form.querySelector('.add-to-cart-button').getAttribute('data-product-id');
-            const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
-            const redirectUrl = form.querySelector('[name=redirect_url]').value;
+            const productId = form.querySelector('.add-to-cart-button')?.getAttribute('data-product-id');
+            if (!productId) {
+                console.error('Product ID is missing.');
+                return;
+            }
+
+            const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]')?.value;
+            if (!csrfToken) {
+                console.error('CSRF Token is missing.');
+                return;
+            }
+
+            const redirectInput = form.querySelector('[name=redirect_url]');
+            if (!redirectInput) {
+                console.error('Redirect URL input is missing.');
+                return;
+            }
+            const redirectUrl = redirectInput.value;
 
             console.log('Sending fetch request with JSON body...');
             console.log('Product ID:', productId);
             console.log('Redirect URL:', redirectUrl);
             console.log('CSRF Token:', csrfToken);
 
-            fetch(`/bag/add/${productId}/`, {
+            fetch(`/products/bag/add/${productId}/`, {
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': csrfToken,
@@ -23,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => {
                     console.log('Response status:', response.status);
                     if (!response.ok) {
-                        throw new Error('Failed to add to cart.');
+                        throw new Error(`Failed to add to cart: ${response.status} ${response.statusText}`);
                     }
                     return response.json();
                 })

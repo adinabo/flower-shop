@@ -51,8 +51,18 @@
                             {% else %}
                                 <p class="small text-muted">No Rating</p>
                             {% endif %}
-                            <a href="{% url 'add_to_bag' product.id %}" class="btn btn-primary btn-sm mt-2">Add to Cart</a>
+                            <form method="POST" action="{% url 'add_to_bag' product.id %}" class="add-to-cart-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <button type="submit" class="btn btn-primary btn-sm mt-2 add-to-cart-button" data-product-id="{{ product.id }}">
+                                    Add to Cart
+                                </button>
+                            </form>                            
+                            <div class="toast-container mt-3" style="position: relative;">
+                                <!-- Toast messages will appear here -->
+                            </div>
                         </div>
+                                           
                     </div>
                 </div>
             {% endfor %}
@@ -70,29 +80,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    // Back-to-Top Button Script
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0);
-    });
-
-    // Sort Selector Script
-    $('#sort-selector').change(function() {
-        var selector = $(this);
-        var currentUrl = new URL(window.location);
-        var selectedVal = selector.val();
-
-        if (selectedVal != "reset") {
-            var sort = selectedVal.split("_")[0];
-            var direction = selectedVal.split("_")[1];
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-            window.location.replace(currentUrl);
-        }
-    });
-</script>
+<script src="{% static 'js/products.js' %}"></script>
 {% endblock %}

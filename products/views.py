@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
 from products.models import Product
-
+import logging
 
 # Create your views here.
 
@@ -66,3 +66,22 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+logger = logging.getLogger(__name__)
+
+def add_to_bag(request, product_id):
+    """Add a single quantity of the specified product to the shopping bag."""
+    if request.method == "POST":
+        product = get_object_or_404(Product, pk=product_id)
+        bag = request.session.get('bag', {})
+        if str(product_id) in bag:
+            bag[str(product_id)] += 1
+        else:
+            bag[str(product_id)] = 1
+        request.session['bag'] = bag
+        return JsonResponse({'message': f'Added {product.name} to your bag.'}, status=200)
+
+    return JsonResponse({'error': 'Invalid request method.'}, status=400)
+
+

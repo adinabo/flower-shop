@@ -1,9 +1,10 @@
 {
   "devDependencies": {
     "jest": "^29.7.0",
-    "jsdom": "^25.0.1"
+    "jsdom": "^25.0.1",
+    "jest-environment-jsdom": "^29.7.0"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jest-environment-jsdom"
   }
 }

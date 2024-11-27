@@ -34,6 +34,20 @@
 #card-element {
     color: #000;
     border: 1px solid #000;
+    padding: 10px;
+}
+
+#card-element iframe {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    height: 100% !important; /* Ensure it has the correct height */
+    width: 100% !important; /* Ensure it spans the container */
+}
+
+#card-element {
+    width: 100%; /* Ensure the element spans the container */
+    height: 50px; /* Ensure it has enough height */
+    border: 1px solid #ccc; /* Add a border for visibility */
 }
 
 select,

@@ -4,6 +4,7 @@ django-allauth==65.0.2
 django-countries==7.2.1
 django-crispy-forms==1.14.0
 pillow==11.0.0
+python-dotenv==1.0.1
 pytz==2024.2
 setuptools==75.2.0
 sqlparse==0.5.1

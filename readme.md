@@ -1,16 +1,11 @@
+## Automated Tests
 
+This project includes automated tests to ensure the correct functionality of the **checkout page** and **Stripe integration**. The tests cover both frontend and backend components, including the Stripe payment processing logic.
 
+The test suite uses Django's built-in testing framework (`django.test`) and covers the following areas:
 
-
-
-## Automatic Tests
-
-This project includes automated tests to ensure the functionality of the **checkout page** and **Stripe integration**. The tests validate both frontend and backend components, including Stripe payment processing.
-
-The test suite uses Django's built-in testing framework (`django.test`) and covers the following:
-
-- **Checkout Page**: Verifies that the checkout page loads correctly.
-- **Stripe Integration**: Ensures the correct Stripe keys are used, and that API calls to Stripe are functional.
+- **Checkout Page**: Verifies that the checkout page renders correctly.
+- **Stripe Integration**: Ensures the correct Stripe keys are being used, and that API calls to Stripe are functional.
 
 ### Checkout Page Tests
 
@@ -23,19 +18,35 @@ Verifies that the checkout page:
 
 ### Stripe Integration Tests
 
-The `StripeIntegrationTest` class ensures that Stripe integration is working as expected, including verifying the **public** and **secret keys**.
+The `StripeIntegrationTest` class ensures that the integration with Stripe works as expected, including validating the **public** and **secret keys**.
 
 #### Test: `test_stripe_secret_key_valid`
-Verifies the **secret key** by making a simple `PaymentIntent` API call to Stripe. It checks:
+Validates the **secret key** by making a `PaymentIntent` API call to Stripe. It checks:
 - The request successfully creates a `PaymentIntent` with the correct amount and currency.
-- If authentication fails, the test will raise an `AuthenticationError`.
+- If authentication fails, the test raises an `AuthenticationError`.
 
 #### Test: `test_stripe_public_key_valid`
-Checks if the **public key** is valid by simulating a `PaymentIntent` creation on the frontend. It verifies that the public key starts with `pk_test_` or `pk_live_` as expected for Stripe keys.
+Checks if the **public key** is valid by simulating the creation of a `PaymentIntent` on the frontend. It verifies that the public key starts with `pk_test_` or `pk_live_` as expected for Stripe keys.
 
 #### Test: `test_stripe_keys_integrated`
 Combines `test_stripe_secret_key_valid` and `test_stripe_public_key_valid` to ensure both keys are properly integrated.
 
 #### Test: `test_invalid_public_key`
-Checks if an invalid **public key** results in a `StripeError` when attempting to create a `PaymentIntent`.
+Verifies that an invalid **public key** results in a `StripeError` when attempting to create a `PaymentIntent`.
 
+### Stripe Elements Tests
+
+The Stripe Elements tests ensure the correct behavior of the **Stripe Elements** integration:
+
+- **Stripe Initialization**: Ensures that the Stripe object is correctly initialized with the public key from the backend (Django).
+- **Element Creation**: Validates that the `card` element is created using the mocked `elements.create` method.
+- **Element Mounting**: Confirms that the `mount` function is called with the correct DOM element (`#card-element`), simulating the mounting of the payment form.
+
+### Mocking Stripe API
+
+Since Jest runs in a Node.js environment and cannot interact with the actual Stripe API or load static files like `stripe_elements.js`, the **Stripe API** is **mocked** using Jest's mock functions. This allows us to simulate Stripe Elements' behavior and test the integration logic without making real API calls or loading external resources.
+
+The tests can be run using the following command:
+
+```bash
+npx jest

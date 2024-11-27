@@ -90,3 +90,4 @@ class StripeIntegrationTest(TestCase):
                 currency="usd",
                 payment_method_types=["card"],
             )
+            

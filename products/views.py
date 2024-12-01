@@ -6,6 +6,8 @@ from django.db.models import Q
 from .models import Product, Category
 from products.models import Product
 import logging
+from .forms import ProductForm
+from django.db.models.functions import Lower
 
 
 def all_products(request):
@@ -95,6 +97,16 @@ def add_to_bag(request, product_id):
 
     return JsonResponse({'error': 'Invalid request method.'}, status=400)
 
+
+def add_product(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
     
 
 

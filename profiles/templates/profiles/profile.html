@@ -8,7 +8,11 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col"></div>
+            <div class="col text-center">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <span class="petalia-logo">Petalia</span>
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}
@@ -23,5 +27,24 @@
                 <hr>
             </div>
         </div>
-        {{ profile }}
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Personal Details</h3>
+                <p><strong>Username:</strong> {{ profile.user.username }}</p>
+                <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                <p><strong>Phone Number:</strong> {{ profile.default_phone_number }}</p>
+
+                <h3>Delivery Information</h3>
+                <p><strong>Street Address 1:</strong> {{ profile.default_street_address1 }}</p>
+                <p><strong>Street Address 2:</strong> {{ profile.default_street_address2 }}</p>
+                <p><strong>City:</strong> {{ profile.default_town_or_city }}</p>
+                <p><strong>Postcode:</strong> {{ profile.default_postcode }}</p>
+                <p><strong>Country:</strong> {{ profile.default_country }}</p>
+                <p><strong>County:</strong> {{ profile.default_county }}</p>
+
+                <hr>
+            </div>
+        </div>
+    </div>
 {% endblock %}

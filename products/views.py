@@ -78,24 +78,23 @@ def add_to_bag(request, product_id):
     """Add a single quantity of the specified product to the shopping bag."""
     if request.method == "POST":
         try:
-            # Parse the JSON body
-            body = json.loads(request.body)
-            redirect_url = body.get('redirect_url', '/')
-            
+            # Parse the JSON body (or use request.POST if JSON isn't used)
+            quantity = int(request.POST.get('quantity', 1))  # Default to 1
+            redirect_url = request.POST.get('redirect_url', '/')
+
             # Add product to session bag
             product = get_object_or_404(Product, pk=product_id)
             bag = request.session.get('bag', {})
-            bag[str(product_id)] = bag.get(str(product_id), 0) + 1
+            bag[str(product_id)] = bag.get(str(product_id), 0) + quantity
             request.session['bag'] = bag
 
             return JsonResponse({'message': f'Added {product.name} to your bag.'}, status=200)
 
-        except json.JSONDecodeError:
-            return JsonResponse({'error': 'Invalid JSON format.'}, status=400)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
 
     return JsonResponse({'error': 'Invalid request method.'}, status=400)
+
 
 
 def add_product(request):

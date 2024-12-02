@@ -1,79 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.add-to-cart-form').forEach(form => {
+    // Combine both form classes into one query
+    document.querySelectorAll('.add-to-cart-form, .add-to-bag-form').forEach(form => {
         form.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
 
-            const productId = form.querySelector('.add-to-cart-button')?.getAttribute('data-product-id');
-            if (!productId) {
-                console.error('Product ID is missing.');
-                return;
-            }
-
+            // Retrieve necessary values
+            const actionUrl = form.getAttribute('action'); // Get form action dynamically
             const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]')?.value;
-            if (!csrfToken) {
-                console.error('CSRF Token is missing.');
+            const quantityInput = form.querySelector('[name=quantity]');
+            const quantity = quantityInput ? quantityInput.value : 1; // Default to 1 if no quantity field
+            const redirectUrl = form.querySelector('[name=redirect_url]')?.value;
+            const toastNotification = document.getElementById('toast-notification'); // Toast container
+
+            if (!actionUrl || !csrfToken || !redirectUrl) {
+                console.error('Missing required form data.');
                 return;
             }
 
-            const redirectInput = form.querySelector('[name=redirect_url]');
-            if (!redirectInput) {
-                console.error('Redirect URL input is missing.');
-                return;
-            }
-            const redirectUrl = redirectInput.value;
-
-            console.log('Sending fetch request with JSON body...');
-            console.log('Product ID:', productId);
+            console.log('Sending fetch request...');
+            console.log('Action URL:', actionUrl);
+            console.log('Quantity:', quantity);
             console.log('Redirect URL:', redirectUrl);
-            console.log('CSRF Token:', csrfToken);
 
-            fetch(`/products/bag/add/${productId}/`, {
+            // Submit the form via fetch API
+            fetch(actionUrl, {
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': csrfToken,
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ redirect_url: redirectUrl })
-            })            
+                body: JSON.stringify({ quantity: quantity, redirect_url: redirectUrl }),
+            })
                 .then(response => {
                     console.log('Response status:', response.status);
                     if (!response.ok) {
-                        throw new Error(`Failed to add to cart: ${response.status} ${response.statusText}`);
+                        throw new Error(`Failed to add to bag: ${response.status} ${response.statusText}`);
                     }
                     return response.json();
                 })
                 .then(data => {
                     console.log('Success response:', data);
 
-                    // Display success toast
-                    const toastContainer = form.parentElement.querySelector('.toast-container');
-                    const toast = document.createElement('div');
-                    toast.className = 'toast bg-success text-white p-2 rounded shadow-sm';
-                    toast.innerHTML = `
-                        <div>${data.message}</div>
-                    `;
-                    toastContainer.appendChild(toast);
-
-                    // Auto-remove toast after 3 seconds
-                    setTimeout(() => {
-                        toast.remove();
-                    }, 3000);
+                    // Show success toast notification
+                    if (toastNotification) {
+                        toastNotification.querySelector('.toast-body').textContent = data.message || 'Product added to bag!';
+                        const toast = new bootstrap.Toast(toastNotification);
+                        toast.show();
+                    }
                 })
                 .catch(error => {
                     console.error('Error:', error);
 
-                    // Display error toast
-                    const toastContainer = form.parentElement.querySelector('.toast-container');
-                    const toast = document.createElement('div');
-                    toast.className = 'toast bg-danger text-white p-2 rounded shadow-sm';
-                    toast.innerHTML = `
-                        <div>Failed to add item to cart.</div>
-                    `;
-                    toastContainer.appendChild(toast);
-
-                    setTimeout(() => {
-                        toast.remove();
-                    }, 3000);
+                    // Show error toast notification
+                    if (toastNotification) {
+                        toastNotification.querySelector('.toast-body').textContent = 'Failed to add product to bag.';
+                        const toast = new bootstrap.Toast(toastNotification);
+                        toast.show();
+                    }
                 });
         });
     });

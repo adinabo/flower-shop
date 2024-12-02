@@ -231,3 +231,33 @@ color: #fff;
 color: #17a2b8; /* text-info */
 }
 
+/*********************************************************************Toasts*/
+.toast {
+  min-width: 300px;
+  background-color: #f9f9ff; /* Soft white background */
+  color: #333333; /* Dark text for readability */
+  border: 2px solid #6a4cad; /* Purple border for emphasis */
+  border-radius: 0.5rem; /* Rounded edges */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.toast-header {
+  background-color: #f9f9ff; /* Match the soft white background */
+  color: #6a4cad; /* Purple text for the header */
+  font-weight: bold;
+  border-bottom: 1px solid #6a4cad; /* Border separator */
+  padding: 0.5rem 1rem; /* Padding for spacing */
+  border-radius: 0.5rem 0.5rem 0 0; /* Rounded top corners */
+}
+
+.toast-body {
+  font-size: 1rem; /* Larger text for readability */
+  padding: 15px 20px; /* Ample padding for a clean look */
+  line-height: 1.5; /* Improve spacing */
+  color: #333333; /* Consistent dark text color */
+}
+
+.toast .close:hover {
+  opacity: 1; /* Brighten close button on hover */
+}

@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
 {% block content %}
+<!-- Toast Notification Container -->
+<div aria-live="polite" aria-atomic="true" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+    <div id="toast-notification" class="toast" data-delay="1200">
+        <div class="toast-header">
+            <strong class="mr-auto">
+                <i class="fas fa-check-circle"></i> Success
+            </strong>
+        </div>
+        <div class="toast-body">
+            Product added to the bag!
+        </div>
+    </div>
+</div>
+
 <!-- Promo Banner and Delivery Info -->
 <div class="promo-banner bg-light py-2 text-center">
     <p class="mb-0"><strong>Free Delivery</strong> on orders over $50! Use code <strong>FREESHIP</strong> at checkout.</p>
 </div>
-
 <!-- Main Content Container -->
 <div class="container-fluid bg-lavender-light py-5">
     <div class="container">
@@ -17,7 +34,6 @@
                 <p class="section-description">Find the perfect arrangement for any occasion. Elegant, fresh, and beautifully crafted.</p>
             </div>
         </div>
-
         <!-- Sorting and Product Count -->
         <div class="row mb-4">
             <div class="col-md-6 text-md-left text-center">
@@ -34,7 +50,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Product Grid -->
         <div class="row">
             {% for product in products %}
@@ -58,18 +73,13 @@
                                     Add to Bag
                                 </button>
                             </form>                            
-                            <div class="toast-container mt-3" style="position: relative;">
-                                <!-- Toast messages will appear here -->
-                            </div>
-                        </div>
-                                           
+                        </div>                      
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
 </div>
-
 <!-- Back-to-Top Button -->
 <div class="btt-button shadow-sm rounded-circle">
     <a class="btt-link d-flex h-100">

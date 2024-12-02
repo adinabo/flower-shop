@@ -60,4 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     });
+    document.getElementById('sort-selector').addEventListener('change', function () {
+        const selectedValue = this.value;
+    
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+    
+        if (selectedValue === 'reset') {
+            params.delete('sort');
+            params.delete('direction');
+        } else {
+            const [sort, direction] = selectedValue.split('_');
+            params.set('sort', sort);
+            params.set('direction', direction);
+        }
+    
+        window.location.href = `${url.pathname}?${params.toString()}`;
+    });
+    
 });

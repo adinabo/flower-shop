@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Combine both form classes into one query
+    // Handle add-to-cart and add-to-bag forms
     document.querySelectorAll('.add-to-cart-form, .add-to-bag-form').forEach(form => {
         form.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
@@ -60,12 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     });
+
+    // Handle sorting
     document.getElementById('sort-selector').addEventListener('change', function () {
         const selectedValue = this.value;
-    
+
         let url = new URL(window.location.href);
         let params = url.searchParams;
-    
+
         if (selectedValue === 'reset') {
             params.delete('sort');
             params.delete('direction');
@@ -74,8 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
             params.set('sort', sort);
             params.set('direction', direction);
         }
-    
+
         window.location.href = `${url.pathname}?${params.toString()}`;
     });
-    
+
+    // Back-to-Top Button Logic
+    const backToTopButton = document.querySelector('.btt-button');
+
+    // Show or hide the button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Show button when scrolled down 200px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    // Scroll smoothly to the top when the button is clicked
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scroll effect
+        });
+    });
 });

@@ -52,23 +52,25 @@
                                                         </button>
                                                     </div>
                                                     <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                        name="quantity" value="{{ item.quantity }}" min="0" max="10"
+                                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
+                                                        onchange="this.form.submit();">
                                                     <div class="input-group-append">
                                                         <button type="button" class="increment-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                             <span><i class="fas fa-plus fa-sm"></i></span>
                                                         </button>
                                                     </div>
-                                                    {% if item.product.has_sizes %}
-                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                    {% endif %}
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-link update-link text-info"><small>Update</small></button>
                                         </form>
+                                        
                                         <!-- Remove item link -->
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                                        <form method="POST" action="{% url 'remove_from_bag' item.item_id %}" style="display: inline;">
+                                            {% csrf_token %}
+                                            <button id="remove_{{ item.item_id }}" class="remove-item btn btn-link text-danger"><small>Remove</small></button>
+                                        </form>                                        
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -132,6 +134,7 @@
             const cookies = document.cookie.split(';');
             for (let i = 0; i < cookies.length; i++) {
                 const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
                 if (cookie.substring(0, name.length + 1) === (name + '=')) {
                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                     break;
@@ -142,18 +145,37 @@
     }
     const csrftoken = getCookie('csrftoken');
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+    // Set up AJAX to include the CSRF token in the request header
+    $.ajaxSetup({
+        headers: { 'X-CSRFToken': csrftoken }
+    });
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+    // Remove item and reload on click
+    $(document).ready(function () {
+    $('.remove-item').click(function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        var idAttr = $(this).attr('id'); // Get the id attribute
+        if (!idAttr || !idAttr.includes('remove_')) {
+            console.error('Invalid ID format for the clicked remove button:', idAttr);
+            return; // Exit the function if the id is invalid
+        }
+
+        var itemId = idAttr.split('remove_')[1]; // Extract the item ID
+        var url = `/bag/remove/${itemId}/`; // Endpoint for removing the item
+
+        console.log('Removing item with ID:', itemId);
+
+        // AJAX request to remove the item
+        $.post(url)
+            .done(function () {
+                location.reload(); // Reload the page on success
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.error('Error removing item:', errorThrown);
+            });
+    });
+});
 </script>
+
 {% endblock %}

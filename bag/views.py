@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -45,9 +49,10 @@ def adjust_bag(request, item_id):
         quantity = int(quantity)
         if quantity < 0:
             raise ValueError("Quantity must be zero or greater.")
-    except (ValueError, TypeError):
+    except (ValueError, TypeError) as e:
         # Handle invalid or missing quantity gracefully
-        return HttpResponse("Invalid quantity value.", status=400)
+        messages.error(request, "Invalid quantity value.")
+        return HttpResponse(f"Error: {e}", status=400)
 
     # Retrieve the current bag from the session
     bag = request.session.get('bag', {})
@@ -55,8 +60,13 @@ def adjust_bag(request, item_id):
     # Update or remove the item based on the quantity
     if quantity > 0:
         bag[item_id] = quantity
+        messages.success(request, f"Updated quantity for item {item_id} to {quantity}.")
     else:
-        bag.pop(item_id, None)  # Remove the item if quantity is 0
+        if item_id in bag:
+            bag.pop(item_id, None)  # Remove the item if quantity is 0
+            messages.success(request, f"Removed item {item_id} from your bag.")
+        else:
+            messages.warning(request, f"Item {item_id} was not found in your bag.")
 
     # Update the session with the modified bag
     request.session['bag'] = bag
@@ -67,13 +77,21 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
     try:
         # Retrieve the current bag from the session
-        bag = request.session.get('bag', {})
+        bag = request.session.get('bag', {})  # Ensure it's a dictionary, not a function
+        print("Current bag contents:", bag)  # Debug: log bag contents
+        print("Attempting to remove item:", item_id)  # Debug: log item_id
 
-        # Remove the specified item from the bag
-        bag.pop(item_id, None)
+        # Ensure the item_id is treated as a string for comparison
+        if str(item_id) in bag:
+            bag.pop(str(item_id), None)  # Remove the item
+            messages.success(request, f"Removed item {item_id} from your bag.")
+        else:
+            messages.warning(request, f"Item {item_id} was not found in your bag.")
 
         # Update the session with the modified bag
         request.session['bag'] = bag
         return HttpResponse(status=200)
     except Exception as e:
+        messages.error(request, f"Error removing item: {e}")
         return HttpResponse(status=500)
+    

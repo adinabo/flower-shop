@@ -13,16 +13,26 @@
     <div class="container py-5">
         <!-- Welcome Section -->
         <header class="text-center mb-5">
-            <h1 class="display-4 text-muted">Welcome, {{ user.username }}!</h1>
-            <p class="lead">Manage your orders and account details here.</p>
+            <h1 class="display-5 text-muted">Welcome, {{ user.username }}!</h1>
+            <p class="lead">Please see your order details below.</p>
         </header>
-        
+    <!-- Help Section -->
         <div class="row">
+            <section class="text-center mb-5">
+                <p class="text-muted">
+                    <strong>Need help with your order?</strong>
+                    <br>
+                    Contact us at 
+                    <a href="mailto:support@petalia.com" class="text-primary">support@petalia.com</a> 
+                    or call us at 
+                    <a href="tel:+1234567890" class="text-primary">+1 234 567 890</a>
+                </p>
+            </section>
             <!-- Order History Section -->
             <section class="col-12">
                 <div class="card shadow-sm">
                     <div class="card-header text-white">
-                        <h2 class="mb-0">Order History</h2>
+                        <h4 class="mb-0">Order History</h4>
                     </div>
                     <div class="card-body p-4">
                         {% if orders %}

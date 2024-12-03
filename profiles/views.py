@@ -4,14 +4,16 @@ from .forms import UserProfileForm
 from .models import UserProfile
 from django.contrib.auth.decorators import login_required
 
-@login_required
 def profile(request):
-    """ Display the user's profile. """
-    # Get the user's profile or return 404 if not found
-    profile = get_object_or_404(UserProfile, user=request.user)
+    """ Display the user's profile, including order history. """
+    profile = UserProfile.objects.get(user=request.user)
+    orders = profile.orders.all()  # Related name from the Order model
 
-    # Use the template directly
-    return render(request, 'profiles/profile.html', {'profile': profile})
+    context = {
+        'profile': profile,
+        'orders': orders,
+    }
+    return render(request, 'profiles/profile.html', context)
 
 
 def create_profile(request):
@@ -57,17 +59,11 @@ def create_profile(request):
 
 
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
+    """ Display the details of a specific order """
+    profile = UserProfile.objects.get(user=request.user)
+    order = profile.orders.get(order_number=order_number)
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
-
-    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
-        'from_profile': True,
     }
-
-    return render(request, template, context)
+    return render(request, 'profiles/order_history.html', context)

@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from checkout.models import Order
+from profiles.models import UserProfile
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
@@ -26,4 +29,14 @@ class OrderAdmin(admin.ModelAdmin):
 
     ordering = ('-date',)
 
-admin.site.register(Order, OrderAdmin)
+
+@receiver(post_save, sender=Order)
+def attach_order_to_profile(sender, instance, created, **kwargs):
+    """Automatically attach an order to a user profile upon creation."""
+    if created and instance.user_profile is None and instance.user:
+        try:
+            user_profile = UserProfile.objects.get(user=instance.user)
+            instance.user_profile = user_profile
+            instance.save()
+        except UserProfile.DoesNotExist:
+            pass  # No user profile found; skip attaching

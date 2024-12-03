@@ -1,21 +1,33 @@
-.order-history {
-    max-height: 416px; /* height of profile form + submit button */
-    overflow-y: auto;
+.header-container {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
-#profile-update-form .form-control {
-    color: #000;
+.card-header {
+    background-color: #a075c9;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: none;
 }
 
-#profile-update-form input::placeholder {
-    color: #aab7c4;
+.table {
+    font-size: 0.9rem;
 }
 
-#id_default_country,
-#id_default_country option:not(:first-child) {
-    color: #000;
+.table th,
+.table td {
+    vertical-align: middle;
 }
 
-#id_default_country option:first-child {
-    color: #aab7c4;
+a.text-primary {
+    font-weight: bold;
 }
+
+.wider-column {
+    width: 25%; /* Adjust the percentage to your desired width */
+}
+
+

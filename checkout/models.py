@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField  
+from django.contrib.auth.models import User
 from products.models import Product
 from profiles.models import UserProfile
 import uuid
@@ -12,6 +13,7 @@ class Order(models.Model):
     Order model for flower shop purchases
     """
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)

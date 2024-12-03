@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import UserProfileForm 
 from .models import UserProfile
+from checkout.models import Order
 from django.contrib.auth.decorators import login_required
 
 def profile(request):
@@ -59,11 +60,12 @@ def create_profile(request):
 
 
 def order_history(request, order_number):
-    """ Display the details of a specific order """
-    profile = UserProfile.objects.get(user=request.user)
-    order = profile.orders.get(order_number=order_number)
+    """ Display the details of a specific order for a user """
+    profile = get_object_or_404(UserProfile, user=request.user)
+    order = get_object_or_404(Order, order_number=order_number, user_profile=profile)
 
     context = {
         'order': order,
+        'from_profile': True,  # Flag to show the "Back to Profile" button
     }
-    return render(request, 'profiles/order_history.html', context)
+    return render(request, 'checkout/checkout_success.html', context)

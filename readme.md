@@ -50,3 +50,7 @@ The tests can be run using the following command:
 
 ```bash
 npx jest
+
+
+All images have been taken from: 
+Favicon was taken from: https://icons8.com/icons/set/

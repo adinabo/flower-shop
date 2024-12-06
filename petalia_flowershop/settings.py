@@ -47,15 +47,8 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
 # Security settings
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = [
     '8000-adinabo-flowershop-2kd2z6faimr.ws.codeinstitute-ide.net',
     'petalia-flowershop-05fb6f37adca.herokuapp.com',

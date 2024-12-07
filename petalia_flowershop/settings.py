@@ -22,7 +22,8 @@ if not SECRET_KEY:
     raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
 
 # Security settings
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = [
     '8000-adinabo-flowershop-2kd2z6faimr.ws.codeinstitute-ide.net',
     'petalia-flowershop-05fb6f37adca.herokuapp.com',
@@ -193,3 +194,6 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
  
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-adinabo-flowershop-2kd2z6faimr.ws.codeinstitute-ide.net',
+]

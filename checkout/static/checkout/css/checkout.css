@@ -40,14 +40,14 @@
 #card-element iframe {
     pointer-events: auto !important;
     visibility: visible !important;
-    height: 100% !important; /* Ensure it has the correct height */
-    width: 100% !important; /* Ensure it spans the container */
+    height: 100% !important; 
+    width: 100% !important;
 }
 
 #card-element {
-    width: 100%; /* Ensure the element spans the container */
-    height: 50px; /* Ensure it has enough height */
-    border: 1px solid #ccc; /* Add a border for visibility */
+    width: 100%; 
+    height: 90px; 
+    border: 1px solid #ccc; 
 }
 
 select,

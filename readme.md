@@ -1,3 +1,8 @@
+
+## Challenges encountered
+Once challenging mileston in my project was setting up the AWS bucket for statics. The issue here was mainly with the products as it took me a while to notice that when uploading a product using admin, it was changing the actual name of the file, making it different than what I had in the bucket. So with every product uploaded, I would have one name in admin, then one name in my bucket, both different than what I've uploaded. I have't found the cause, but I've manually changed that to make sure my product image is displaying correctly.
+
+
 ## Automated Tests
 
 This project includes automated tests to ensure the correct functionality of the **checkout page** and **Stripe integration**. The tests cover both frontend and backend components, including the Stripe payment processing logic.

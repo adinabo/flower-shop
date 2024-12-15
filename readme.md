@@ -1,6 +1,7 @@
 
 ## Petalia
 
+Live site: https://petalia-flowershop-05fb6f37adca.herokuapp.com/
 
 The Petalia Flower Shop app was created to provide a seamless, user-friendly platform for customers to explore and purchase floral arrangements online. With the increasing trend of e-commerce and the growing demand for personalized shopping experiences, the app aims to make flower shopping convenient, accessible, and enjoyable for all users.
 
@@ -18,6 +19,54 @@ Scalability: Petalia serves as a scalable solution for small and medium-sized fl
 
 Sustainability and Growth: By digitizing the flower shopping process, Petalia not only simplifies operations but also provides valuable insights into customer preferences, enabling businesses to adapt and grow.
 
+## UX Design Process
+
+### Wireframes and Mock-ups 
+
+### Design Decisions and Reasoning
+
+### Features
+
+
+### Database Structure and Data Model
+
+### Technologies Used
+- HTML
+- CSS
+- Python
+- Javascript 
+- Django
+- AWS for statics
+- Bootstrap
+- Postgresql
+- Stripe
+- Figma, Balsamiq and Paint for wireframes
+- Git and Github 
+- Heroku 
+- Chrome developer tools
+- Pexels and unsplash for images
+
+
+### Installation
+To install and run the app locally:
+
+Clone the repository git clone https:// https://github.com/adinabo/petalia-flowershop
+Navigate to the project folder: cd petalia_flowershop
+Install the required dependencies: pip install -r requirements.txt
+Run the app: run.py
+Open the app
+
+
+### Deployment
+
+1. Create a Heroku Account: Set up an account on Heroku.
+2. Prepare the Application: Ensure that the application is ready for deployment by setting up a requirements.txt file with all the necessary dependencies and a Procfile to specify the command used to run the app.
+3. Initialize a Git Repository: If not already done, initialize a Git repository and commit all changes.
+4. Create a New Heroku App: Use the Heroku dashboard or CLI to create a new app.
+5. Connect the App to Heroku: Connect the Heroku app to the GitHub repository or push directly from the command line.
+6. Configure Environment Variables: Set up the necessary environment variables in the Heroku dashboard under the "Settings" tab.
+7. Deploy the Application: Deploy the app either via GitHub integration or manually by pushing to Heroku using the git push heroku main command.
+8. Monitor and Debug: Use the Heroku logs to monitor the app’s performance and debug any issues that may arise.
 
 ## Customer User Stories
 
@@ -43,6 +92,10 @@ So that I can complete my purchase without any concerns.
 10. As a usr, I want the app to be mobile-friendly and responsive, so that I can easily shop on my phone or tablet.
 
 11. I want the website to load quickly and run smoothly, so that I have a pleasant browsing experience.
+
+
+### Bugs 
+
 
 ## Challenges encountered
 Once challenging mileston in my project was setting up the AWS bucket for statics. The issue here was mainly with the products as it took me a while to notice that when uploading a product using admin, it was changing the actual name of the file, making it different than what I had in the bucket. So with every product uploaded, I would have one name in admin, then one name in my bucket, both different than what I've uploaded. I have't found the cause, but I've manually changed that to make sure my product image is displaying correctly.
@@ -103,6 +156,15 @@ Since Jest runs in a Node.js environment and cannot interact with the actual Str
 4. Placing an order
 One issue encountered when placing an order was that it didn't return checkout_success everytime an order was placed. When opening with Dev Tools, it did work on mobile but not on desktop. Also, the grand total was not being returned on the checkout success page. 
 
+
+### Future Features 
+
+### Credits
+
+- Jessica Bassey from Newcastle College for support 
+- Friends and family for feedback
+
+Mentor was not used at all for for this project so no guidance was received.
 
 
 All images have been taken from: Usplash

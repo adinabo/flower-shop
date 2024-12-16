@@ -15,18 +15,72 @@
 {% endblock %}
 
 {% block content %}
+<!-- Achievements Section Start -->
+<section class="achievements-section py-2 bg-dark text-center">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Delivered Bouquets -->
+            <div class="col-md-4">
+                <div class="achievement-item">
+                    <i class="bi bi-flower3 fs-3 text-danger"></i>
+                    <p class="mt-2 fw-bold text-white">1000+ Bouquets Delivered</p>
+                </div>
+            </div>
+            <!-- Satisfaction Guarantee -->
+            <div class="col-md-4">
+                <div class="achievement-item">
+                    <i class="bi bi-shield-check fs-3 text-success"></i>
+                    <p class="mt-2 fw-bold text-white text-white">Satisfaction Guarantee</p>
+                </div>
+            </div>
+            <!-- Happy Customers -->
+            <div class="col-md-4">
+                <div class="achievement-item">
+                    <i class="bi bi-emoji-smile fs-3 text-warning"></i>
+                    <p class="mt-2 fw-bold text-white">500+ Happy Customers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Achievements Section End -->
 <!-- About Start -->
 <div class="container-xxl py-5 bg-white">
     <div class="container">
         <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
             <div class="section-title">
-                <h3 class="display-6 mt-2">We deliver the essence of nature to your doorstep.</h3>
+                <h3 class="display-6 mt-2 text-center">Petals of joy to your doorstep</h3>
             </div>
             <p class="mb-4 mt-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
             <p class="mb-4">At Petalia, we believe flowers are more than just gifts—they're an expression of love, gratitude, and celebration. Each bouquet is thoughtfully designed to bring beauty and joy to every occasion, from life's simplest moments to its grandest milestones.</p>
             <p class="mb-4">Our commitment to sustainability ensures we source our blooms responsibly, partnering with trusted growers who share our values. By prioritizing freshness and eco-friendly practices, we deliver not just flowers but a piece of nature itself.</p>
             <p class="mb-1">Whether you're looking to surprise a loved one, brighten your home, or make a statement, Petalia is here to make every moment bloom. Experience the magic of flowers with us, and let us help you tell your story in petals.</p>
         </div>
+
+        <!-- Image Cluster Start -->
+        <div class="image-cluster mt-5 text-center">
+            <div class="row g-3">
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/aboutus1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 1">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/aboutus2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 2">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/flower3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 3">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/flower4.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 4">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/flower5.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 5">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="{% static 'media/flower6.jpg' %}" class="img-fluid rounded shadow-sm" alt="Flower 6">
+                </div>
+            </div>
+        </div>
+        <!-- Image Cluster End -->
     </div>
 </div>
 <!-- About End -->

@@ -103,15 +103,14 @@
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
                 <p>Stay updated with the latest news and promotions from Petalia.</p>
-                <form action="#" method="post">
+                <form action="javascript:void(0);" method="post" id="newsletter-form">
                     <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-light w-100">Subscribe</button>
                 </form>
+                <p id="success-message" class="text-white mt-2" style="display: none;">Thank you for subscribing!</p>
             </div>
         </div>
-
         <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.3);">
-        
         <!-- Footer Bottom -->
         <div class="text-center">
             <p class="mb-0">&copy; 2024 Petalia Flowershop. All rights reserved.</p>
@@ -119,5 +118,8 @@
     </div>
 </footer>
 </body>
-
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
 {% endblock %}

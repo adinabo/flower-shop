@@ -7,7 +7,7 @@
     <section class="hero-section d-flex align-items-center text-white bg-primary text-center py-5">
         <div class="container">
             <h1 class="display-2 fw-bold mb-5 mt-5">Petalia</h1>
-            <p class="lead mb-4">Bringing beauty and freshness to your special moments</p>
+            <p class="lead mb-4">Bringing beauty and freshness to your special moments. Our handpicked arrangements are designed to inspire joy and make every occasion unforgettable.</p>
             <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5 mt-5">Shop Now</a>
         </div>
     </section>
@@ -37,8 +37,7 @@
     <div class="container">
         <h2 class="text-center mb-5">Our Bouquets</h2>
         <!-- Bouquets Section -->
-        <h3 class="text-center my-5">Bouquets</h3>
-        <div class="row g-4">
+        <div class="row g-4 mt-3">
             {% for product in bouquets_products|slice:":3" %} 
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm h-100">
@@ -55,10 +54,10 @@
             {% endfor %}
         </div>
         <!-- Bridal Section -->
-    <h3 class="text-center my-5">Bridal</h3>
+    <h2 class="text-center my-5 mb-4">Bridal</h2>
     <div class="row g-4">
         {% for product in bridal_products|slice:":3" %} 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
                 <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
                 <div class="card-body text-center">

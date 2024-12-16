@@ -1,9 +1,9 @@
 /**********************************************************************Hero*/
 
 .hero-section .container {
-  width: 50vh;  /* Set a larger max-width */
-  width: 100%;  /* Ensure full width utilization */
-  padding: 0 15px;  /* Add padding to the left and right */
+  width: 50vh;  
+  width: 100%;  
+  padding: 0 15px;  
 }
 
 .hero-section {
@@ -37,7 +37,7 @@
 
 .bg-custom-footer {
   background-color: rgba(85, 46, 139, 0.668);
-  color: #ffffff; /* Keeps text readable on darker background */
+  color: #ffffff; 
 
 }
 
@@ -77,7 +77,6 @@
   padding: 0 15px; 
 }
 
-/* Section title styling */
 .lavender-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -86,7 +85,6 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* Section description styling */
 .section-description {
   font-size: 1.1rem;
   color: #7a7099;
@@ -94,19 +92,19 @@
   font-style: italic;
 }
 
-/* Optional hover effect for the title */
+
 .lavender-title:hover {
   color: #9b6eaf;
   transition: color 0.3s ease;
 }
-/* Styling for the Back to Top button */
+
 .btt-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #d1b3d8; /* Soft lavender */
+    background-color: #d1b3d8; 
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -115,11 +113,10 @@
 }
 
 .btt-button:hover {
-    background-color: #b89ac8; /* Darker lavender on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #b89ac8; 
+    transform: scale(1.1); 
 }
 
-/* Link styling for icon alignment */
 .btt-link {
     width: 100%;
     height: 100%;
@@ -141,22 +138,21 @@
   right: 20px;
   width: 50px;
   height: 50px;
-  background-color: #d1b3d8; /* Soft lavender color */
+  background-color: #d1b3d8; 
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btt-button:hover {
-  background-color: #b89ac8; /* Darker lavender on hover */
-  transform: scale(1.1); /* Slight enlargement on hover */
+  background-color: #b89ac8; 
+  transform: scale(1.1); 
 }
 
-/* Link styling for the icon alignment */
 .btt-link {
   width: 100%;
   height: 100%;
@@ -166,15 +162,14 @@
   text-decoration: none;
 }
 
-/* Styling for the arrow icon */
 .btt-link i {
-  font-size: 1.2rem; /* Icon size */
-  color: #4c3a63; /* Dark lavender for contrast */
+  font-size: 1.2rem; 
+  color: #4c3a63; 
   transition: color 0.3s ease;
 }
 
 .btt-button:hover i {
-  color: #ffffff; /* White arrow on hover */
+  color: #ffffff; 
 }
 
 /**************************************************************Allauth form */
@@ -228,36 +223,39 @@ color: #fff;
 }
 
 .allauth-form-inner-content a {
-color: #17a2b8; /* text-info */
+color: #17a2b8; 
 }
 
 /*********************************************************************Toasts*/
 .toast {
   min-width: 300px;
-  background-color: #f9f9ff; /* Soft white background */
-  color: #333333; /* Dark text for readability */
-  border: 2px solid #6a4cad; /* Purple border for emphasis */
-  border-radius: 0.5rem; /* Rounded edges */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  overflow: hidden; /* Prevent overflow */
+  background-color: #f9f9ff; 
+  color: #333333; 
+  border: 2px solid #6a4cad; 
+  border-radius: 0.5rem; 
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
 }
 
 .toast-header {
-  background-color: #f9f9ff; /* Match the soft white background */
-  color: #6a4cad; /* Purple text for the header */
+  background-color: #f9f9ff; 
+  color: #6a4cad; 
   font-weight: bold;
-  border-bottom: 1px solid #6a4cad; /* Border separator */
-  padding: 0.5rem 1rem; /* Padding for spacing */
-  border-radius: 0.5rem 0.5rem 0 0; /* Rounded top corners */
+  border-bottom: 1px solid #6a4cad; 
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem 0.5rem 0 0; 
 }
 
 .toast-body {
-  font-size: 1rem; /* Larger text for readability */
-  padding: 15px 20px; /* Ample padding for a clean look */
-  line-height: 1.5; /* Improve spacing */
-  color: #333333; /* Consistent dark text color */
+  font-size: 1rem; 
+  padding: 15px 20px; 
+  line-height: 1.5; 
+  color: #333333; 
 }
 
 .toast .close:hover {
-  opacity: 1; /* Brighten close button on hover */
+  opacity: 1; 
 }
+
+/************************************************************************Divider*/
+

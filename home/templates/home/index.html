@@ -18,24 +18,28 @@
 <!-- About Start -->
 <div class="container-xxl py-5">
     <div class="container">
-            <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
-                <div class="section-title">
-                    <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
-                    <h3 class="display-6 mt-2"> We deliver the essence of nature to your doorstep.</h3>
-                </div>
-                <p class="mb-4 mt-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
+        <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
+            <div class="section-title">
+                <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
+                <h3 class="display-6 mt-2">We deliver the essence of nature to your doorstep.</h3>
             </div>
+            <p class="mb-4 mt-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
+            <p class="mb-4">At Petalia, we believe flowers are more than just gifts—they're an expression of love, gratitude, and celebration. Each bouquet is thoughtfully designed to bring beauty and joy to every occasion, from life's simplest moments to its grandest milestones.</p>
+            <p class="mb-4">Our commitment to sustainability ensures we source our blooms responsibly, partnering with trusted growers who share our values. By prioritizing freshness and eco-friendly practices, we deliver not just flowers but a piece of nature itself.</p>
+            <p class="mb-1">Whether you're looking to surprise a loved one, brighten your home, or make a statement, Petalia is here to make every moment bloom. Experience the magic of flowers with us, and let us help you tell your story in petals.</p>
         </div>
     </div>
+</div>
 <!-- About End -->
- <!-- Collections Section --><section class="py-5">
+ <!-- Collections Section -->
+ <hr class="section-divider">
+  <section class="py-3">
     <div class="container">
-        <h2 class="text-center mb-5">Our Collections</h2>
-
+        <h2 class="text-center mb-5">Our Bouquets</h2>
         <!-- Bouquets Section -->
-        <h3 class="text-center mb-4">Bouquets</h3>
+        <h3 class="text-center my-5">Bouquets</h3>
         <div class="row g-4">
-            {% for product in bouquets_products %}
+            {% for product in bouquets_products|slice:":3" %} 
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm h-100">
                     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
@@ -50,25 +54,25 @@
             <p class="text-center">No products available in this category.</p>
             {% endfor %}
         </div>
-
         <!-- Bridal Section -->
-        <h3 class="text-center my-5">Bridal</h3>
-        <div class="row g-4">
-            {% for product in bridal_products %}
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text text-muted">${{ product.price }}</p>
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
-                    </div>
+    <h3 class="text-center my-5">Bridal</h3>
+    <div class="row g-4">
+        {% for product in bridal_products|slice:":3" %} 
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text text-muted">${{ product.price }}</p>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
                 </div>
             </div>
-            {% empty %}
-            <p class="text-center">No products available in this category.</p>
-            {% endfor %}
         </div>
+        {% empty %}
+        <p class="text-center">No products available in this category.</p>
+        {% endfor %}
+    </div>
+
     </div>
 </section>
  <!-- Collections Section end-->

@@ -1,5 +1,8 @@
 {% extends "account/base_entrance.html" %}
 {% load allauth i18n %}
+{% if 'account' in request.resolver_match.namespace %}
+    <link href="{% static 'css/allauth.css' %}" rel="stylesheet">
+{% endif %}
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}

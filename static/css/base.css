@@ -7,10 +7,10 @@
 }
 
 .hero-section {
-    background: url('/media/banner1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background: url('/media/banner1.jpg') no-repeat center center;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .hero-section h1 {
@@ -25,6 +25,67 @@
     font-family: 'Merriweather', serif;
 }
   
+/* Default styles (for larger screens) */
+.hero-section {
+  min-height: 50vh; /* Ensures full-screen hero */
+  padding: 5rem 1rem; /* Top/bottom spacing */
+}
+
+.hero-section h1 {
+  font-size: 4rem; /* Default size for larger screens */
+}
+
+.hero-section p {
+  font-size: 1.25rem; /* Large lead text */
+}
+
+.hero-section .btn {
+  font-size: 1.25rem; /* Larger button for prominence */
+}
+
+/* Medium screens (768px and below) */
+@media (max-width: 768px) {
+  .hero-section {
+      text-align: center;
+      padding: 4rem 1rem;
+  }
+
+  .hero-section h1 {
+      font-size: 3rem; /* Slightly smaller heading */
+  }
+
+  .hero-section p {
+      font-size: 1.1rem; /* Adjust lead text size */
+      line-height: 1.5; /* Maintain readability */
+  }
+
+  .hero-section .btn {
+      font-size: 1rem; /* Adjust button size */
+      padding: 0.75rem 2rem; /* Smaller padding */
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  .hero-section {
+      padding: 3rem 1rem;
+  }
+
+  .hero-section h1 {
+      font-size: 2.5rem; /* Smaller heading for mobile */
+  }
+
+  .hero-section p {
+      font-size: 1rem; /* Smaller lead text */
+      margin-bottom: 2rem;
+  }
+
+  .hero-section .btn {
+      font-size: 0.9rem; /* Smaller button size */
+      padding: 0.5rem 1.5rem; /* Compact button */
+  }
+}
+
 /**********************************************************************Navbar and Footer*/
 .petalia-logo {
   font-family: "Homemade Apple", cursive;
@@ -334,18 +395,18 @@ color: #17a2b8;
 
 .icon-circle i {
   transition: color 0.3s ease-in-out;
-  color: #333; /* Default icon color */
+  color: #333; 
 }
 
 .icon-circle:hover {
-  background-color: #bc59b7; /* Primary color on hover */
-  color: #fff; /* Icon color on hover */
+  background-color: #bc59b7; 
+  color: #fff; 
 }
 
 .bag-total {
-  font-size: 0.85rem; /* Slightly smaller font size */
-  font-weight: bold; /* Bold for emphasis */
-  color: inherit; /* Matches dynamic color class (text-info or text-black) */
+  font-size: 0.85rem; 
+  font-weight: bold; 
+  color: inherit; 
   margin-top: 5px;
 }
 

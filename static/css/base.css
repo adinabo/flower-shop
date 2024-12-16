@@ -21,26 +21,41 @@
     font-size: 5rem;
   }
 
-  body {
-    font-family: 'Merriweather', serif;
+body {
+  font-family: 'Merriweather', serif;
+  position: relative; /* Allows the pseudo-element to position correctly */
+  margin: 0; /* Remove default body margin */
+  min-height: 100vh; /* Ensures background covers full viewport */
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/media/petals.png') repeat top;
+  background-size: 50%;
+  opacity: 0.3; 
+  z-index: -1; 
 }
   
 /* Default styles (for larger screens) */
 .hero-section {
-  min-height: 50vh; /* Ensures full-screen hero */
-  padding: 5rem 1rem; /* Top/bottom spacing */
+  min-height: 50vh; 
+  padding: 5rem 1rem; 
 }
 
 .hero-section h1 {
-  font-size: 4rem; /* Default size for larger screens */
+  font-size: 4rem; 
 }
 
 .hero-section p {
-  font-size: 1.25rem; /* Large lead text */
+  font-size: 1.25rem; 
 }
 
 .hero-section .btn {
-  font-size: 1.25rem; /* Larger button for prominence */
+  font-size: 1.25rem; 
 }
 
 /* Medium screens (768px and below) */
@@ -51,17 +66,17 @@
   }
 
   .hero-section h1 {
-      font-size: 3rem; /* Slightly smaller heading */
+      font-size: 3rem; 
   }
 
   .hero-section p {
-      font-size: 1.1rem; /* Adjust lead text size */
-      line-height: 1.5; /* Maintain readability */
+      font-size: 1.1rem; 
+      line-height: 1.5; 
   }
 
   .hero-section .btn {
-      font-size: 1rem; /* Adjust button size */
-      padding: 0.75rem 2rem; /* Smaller padding */
+      font-size: 1rem; 
+      padding: 0.75rem 2rem; 
   }
 }
 
@@ -72,17 +87,17 @@
   }
 
   .hero-section h1 {
-      font-size: 2.5rem; /* Smaller heading for mobile */
+      font-size: 2.5rem; 
   }
 
   .hero-section p {
-      font-size: 1rem; /* Smaller lead text */
+      font-size: 1rem; 
       margin-bottom: 2rem;
   }
 
   .hero-section .btn {
-      font-size: 0.9rem; /* Smaller button size */
-      padding: 0.5rem 1.5rem; /* Compact button */
+      font-size: 0.9rem; 
+      padding: 0.5rem 1.5rem; 
   }
 }
 

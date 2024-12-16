@@ -23,9 +23,9 @@
 
 body {
   font-family: 'Merriweather', serif;
-  position: relative; /* Allows the pseudo-element to position correctly */
-  margin: 0; /* Remove default body margin */
-  min-height: 100vh; /* Ensures background covers full viewport */
+  position: relative; 
+  margin: 0; 
+  min-height: 100vh; 
 }
 body::before {
   content: '';
@@ -39,7 +39,12 @@ body::before {
   opacity: 0.3; 
   z-index: -1; 
 }
-  
+
+.image-cluster img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Default styles (for larger screens) */
 .hero-section {
   min-height: 50vh; 

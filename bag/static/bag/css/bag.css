@@ -1,0 +1,66 @@
+/* General Bag Styles */
+.shopping-bag {
+    font-family: "Arial", sans-serif;
+}
+
+.shopping-bag h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.shopping-bag .table {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.shopping-bag .table th {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.shopping-bag .table td {
+    vertical-align: middle;
+    font-size: 0.875rem;
+}
+
+.shopping-bag .table img {
+    max-height: 80px;
+}
+
+.shopping-bag .btn-outline-dark {
+    color: #333;
+    border: 1px solid #333;
+}
+
+.shopping-bag .btn-outline-dark:hover {
+    background: #333;
+    color: #fff;
+}
+
+.shopping-bag .btn-danger {
+    font-size: 0.75rem;
+}
+
+.shopping-bag .btn-primary {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .shopping-bag .table {
+        font-size: 0.75rem;
+    }
+
+    .shopping-bag .btn-primary {
+        width: 100%;
+    }
+
+    .shopping-bag .btn-outline-secondary {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

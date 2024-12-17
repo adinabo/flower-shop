@@ -1,3 +1,103 @@
+/**********************************************************************Navbar*/
+.petalia-logo {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem; 
+  color: #6a0dad; 
+  letter-spacing: 1px;
+} 
+/* User Icon Styling */
+.user-icon {
+  color: #333; 
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-icon:hover {
+  color: #bc59b7; 
+  text-decoration: none;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.icon-circle {
+  background-color: #f8f9fa; 
+  border-radius: 50%; 
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon-circle i {
+  color: #333; 
+  transition: color 0.3s ease-in-out;
+}
+
+.icon-circle:hover {
+  background-color: #bc59b7; 
+  color: #fff; 
+}
+
+.user-label {
+  font-size: 0.85rem; 
+  font-weight: 500; 
+  color: inherit;
+  margin-top: 5px;
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+}
+
+/* Shopping Bag Icon Styling */
+.shopping-bag {
+  color: inherit; 
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.shopping-bag:hover {
+  text-decoration: none;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.icon-circle {
+  background-color: #f8f9fa; 
+  border-radius: 50%; 
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon-circle i {
+  transition: color 0.3s ease-in-out;
+  color: #333; 
+}
+
+.icon-circle:hover {
+  background-color: #bc59b7; 
+  color: #fff; 
+}
+
+.bag-total {
+  font-size: 0.85rem; 
+  font-weight: bold; 
+  color: inherit; 
+  margin-top: 5px;
+}
+
 /* Center the form on the page */
 .account .container {
     max-width: 600px;
@@ -66,72 +166,78 @@
     letter-spacing: 1px;
   }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #f8f9fa;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/media/petals.png') repeat top;
-    background-size: 50%;
-    opacity: 0.3; 
-    z-index: -1; 
-  }
-.container, .registration {
-    display: flex;
-    min-height: 70vh;
-    min-width: 70vh;
-    align-items: center;
-    justify-content: center;
-  }
-  .registration-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  .registration-image {
-    background: url('/media/rebecca-A_fBQe39A4k-unsplash.jpg') no-repeat center center;
-    background-size: contain;
-    min-height: 100%;
-  }
-  .registration-form {
-    padding: 40px;
-  }
-  .form-heading {
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  .form-text {
-    color: #666;
-    margin-bottom: 30px;
-  }
-  .form-control {
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    font-size: 16px;
-  }
-  .btn-primary {
-    background: #007bff;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  .btn-primary:hover {
-    background: #0056b3;
-  }
-  .text-center a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .text-center a:hover {
-    text-decoration: underline;
-  }
+  /* General Styles */
+body {
+  background-color: #fdf7ff; /* Light violet background */
+  font-family: 'Merriweather', serif;
+  position: relative; 
+  margin: 0;
+  padding: 0;
+  background: url('/media/register.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh;
+}
+
+/* Container for Registration Form */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+}
+
+/* Card Style */
+.registration-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Form Heading */
+.form-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #6a0dad; /* Violet accent */
+  margin-bottom: 20px;
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: #6a0dad; /* Violet */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5a0ca3; /* Slightly darker violet */
+  transform: translateY(-2px);
+}
+
+/* Text Links */
+a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}

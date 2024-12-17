@@ -4,9 +4,9 @@
 {% block page_header %}
     {{ block.super }}
     <!-- Hero Start -->
-    <section class="hero-section d-flex align-items-center text-white bg-primary text-center py-5">
+    <section class="hero-section  text-white text-center py-5">
         <div class="container">
-            <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5 btn-hero ">Shop Now</a>
+            <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5 btn-hero">Shop Now</a>
         </div>
     </section>
     <!-- Hero End -->
@@ -44,12 +44,12 @@
 <!-- Achievements Section End -->
 <!-- About Start -->
         <!-- Image Cluster Start -->
-        <div class="container-xxl py-5 bg-white">
-            <div class="container">
+        <div class="container-xxl py-5">
+            <div class="container bg-white">
                 <div class="row align-items-center">
                     <!-- Text Section -->
-                    <div class="col-lg-6">
-                        <h3 class="display-6 mt-2">Petals of joy to your doorstep</h3>
+                    <div class="col-lg-6 bg-white">
+                        <h3 class="display-6 mt-2">Fresh flowers to your doorstep<i class="bi bi-flower3"></i></h3>
                         <p class="mb-4 mt-4">With years of experience and a deep love for floral artistry, Petalia blends quality with passion. Explore our wide selection of arrangements, handcrafted with care and attention.</p>
                         <p class="mb-4">At Petalia, we believe flowers are more than just gifts—they're an expression of love, gratitude, and celebration. Each bouquet is thoughtfully designed to bring beauty and joy to every occasion, from life's simplest moments to its grandest milestones.</p>
                         <p class="mb-4">Our commitment to sustainability ensures we source our blooms responsibly, partnering with trusted growers who share our values. By prioritizing freshness and eco-friendly practices, we deliver not just flowers but a piece of nature itself.</p>
@@ -83,7 +83,7 @@
  <hr class="section-divider">
   <section class="py-3">
     <div class="container">
-        <h2 class="text-center mb-5">Our Best Sellers This Month</h2>
+        <h1 class="text-center mb-5">Our Best Sellers This Month</h1>
         <!-- Bouquets Section -->
         <div class="row g-4 mt-3">
             {% for product in bouquets_products|slice:":3" %} 
@@ -92,7 +92,7 @@
                     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text text-muted">${{ product.price }}</p>
+                        <p class="card-text text-muted">£{{ product.price }}</p>
                         <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
             {% endfor %}
         </div>
         <!-- Bridal Section -->
-    <h2 class="text-center my-5 mb-4">Bridal</h2>
+    <h1 class="text-center my-5 mb-4">Bridal</h1>
     <div class="row g-4 ">
         {% for product in bridal_products|slice:":3" %} 
         <div class="col-md-4 mb-4">
@@ -110,7 +110,7 @@
                 <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 250px; object-fit: cover;">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text text-muted">${{ product.price }}</p>
+                    <p class="card-text text-muted">£{{ product.price }}</p>
                     <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">View Product</a>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                 <ul class="list-unstyled">
                     <li><i class="bi bi-telephone-fill me-3"></i> +1 (555) 123-4567</li>
                     <li><i class="bi bi-envelope-fill me-3"></i> info@petalia.com</li>
-                    <li><i class="bi bi-geo-alt-fill me-3"></i> 123 Flower Street, Garden City</li>
+                    <li><i class="bi bi-geo-alt-fill me-3"></i> 123 Garden Street, London </li>
                 </ul>
             </div>
 
@@ -150,7 +150,7 @@
             <!-- Newsletter Section (Optional) -->
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
-                <p>Stay updated with the latest news and promotions from Petalia.</p>
+                <p>Stay updated with the latest promotions.</p>
                 <form action="javascript:void(0);" method="post" id="newsletter-form">
                     <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-light w-100">Subscribe</button>
@@ -161,7 +161,7 @@
         <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.3);">
         <!-- Footer Bottom -->
         <div class="text-center">
-            <p class="mb-0">&copy; 2024 Petalia Flowershop. All rights reserved.</p>
+            <p class="mb-0">&copy; 2024 Petalia. All rights reserved.</p>
         </div>
     </div>
 </footer>

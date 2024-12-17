@@ -1,126 +1,148 @@
-/**********************************************************************Hero*/
-
-.hero-section, .container {
-  width: 50vh;  
-  width: 100%;  
-  padding: 0 15px;  
-}
-
-.hero-section {
-  background: url('/media/banner1.jpg') no-repeat center center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  height: 100vh;
-}
-
-.hero-content {
-  padding-top: 200px; 
-  text-align: center; 
-}
-
 body {
-  font-family: 'Merriweather', serif;
-  position: relative; 
-  margin: 0; 
-  min-height: 100vh; 
+  background: url('/media/register.jpg') repeat cover;
+  background-size: cover;
+  background-position: left;
+  height: 100vh; 
+  position: relative;
+  overflow: hidden;
 }
 body::before {
-  content: '';
-  position: fixed;
+  content: ""; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/media/register.jpg') repeat top;
-  background-size: 100%;
-  opacity: 0.3; 
+  background: url('/media/register.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.4; 
   z-index: -1; 
 }
 
-.image-cluster img:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-}
+/**********************************************************************Hero*/
 
-/* Default styles (for larger screens) */
+/* General Hero Section Styling */
 .hero-section {
-  min-height: 70vh; 
-  padding: 5rem 1rem; 
+  background: url('/media/banner1.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Distribute content */
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-.hero-section .btn {
-  font-size: 1rem; 
-
+.hero-content {
+  margin-top: auto; /* Push content to center */
+  margin-bottom: auto; /* Keep vertical alignment */
 }
+
 /* Hero Button */
 .btn-hero {
-  display: inline-block;
-  background-color: #b57edc; 
-  color: #fff; 
+  background-color: #b57edc;
+  color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   border: none;
-  border-radius: 25px 5px 25px 5px; 
-  padding: 10px 30px; 
+  border-radius: 25px 5px 25px 5px;
+  padding: 12px 30px;
   text-decoration: none;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-  margin-top: 190px;
+  margin-top: 23rem; 
+  position: absolute;
+  z-index: 10;
+  top: 60%; /* Center vertically */
+  right: 20%
 }
 
-/* Hover Effect */
 .btn-hero:hover {
-  background-color: #a56cc1; 
-  transform: scale(1.05) rotate(-3deg); 
+  background-color: #a56cc1;
+  transform: scale(1.05) rotate(-3deg);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   color: #fff;
   text-decoration: none;
 }
 
-/* Medium screens (768px and below) */
+/******************************************************************** Media Queries */
+
+/* Large screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .hero-section {
+    height: 80vh; /* Slightly increase height for large screens */
+    padding: 6rem 2rem;
+  }
+
+  .btn-hero {
+    font-size: 1.3rem;
+    padding: 12px 35px; /* Make button slightly larger */
+    margin-top: 2rem;
+  }
+}
+
+/* Medium screens (max-width: 992px) */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 70vh;
+    padding: 4rem 1.5rem;
+    margin-top: 2rem; 
+  }
+
+  .btn-hero {
+    font-size: 1rem;
+    padding: 8px 20px;
+    margin-top: 70px; 
+  }
+}
+
+/* Small screens (max-width: 768px) */
 @media (max-width: 768px) {
   .hero-section {
-      text-align: center;
-      padding: 4rem 1rem;
+    height: 60vh; /* Adjust height for smaller screens */
+    padding: 3rem 1rem;
   }
 
-  .hero-section h1 {
-      font-size: 3rem; 
-  }
-
-  .hero-section p {
-      font-size: 1.1rem; 
-      line-height: 1.5; 
-  }
-
-  .hero-section .btn {
-      font-size: 1rem; 
-      padding: 0.75rem 2rem; 
+  .btn-hero {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    margin-top: 70px; 
   }
 }
 
-/* Small screens (576px and below) */
+/* Extra Small screens (max-width: 576px) */
 @media (max-width: 576px) {
   .hero-section {
-      padding: 3rem 1rem;
+    height: 50vh; /* Adjust height for very small mobile screens */
+    padding: 2rem 1rem;
   }
 
-  .hero-section h1 {
-      font-size: 2.5rem; 
-  }
-
-  .hero-section p {
-      font-size: 1rem; 
-      margin-bottom: 2rem;
-  }
-
-  .hero-section .btn {
-      font-size: 0.9rem; 
-      padding: 0.5rem 1.5rem; 
+  .btn-hero {
+    font-size: 0.8rem;
+    padding: 6px 12px; /* Smaller button */
+    margin-top: 70px;
+    border-radius: 15px 5px 15px 5px; /* Tweak for a clean look */
   }
 }
+
+/* Ultra Small screens (max-width: 400px) */
+@media (max-width: 400px) {
+  .hero-section {
+    height: 40vh; /* Compact height for ultra-small screens */
+    padding: 1.5rem 0.5rem;
+  }
+
+  .btn-hero {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    margin-top: 1rem;
+    border-radius: 12px 4px 12px 4px; /* Compact radius */
+  }
+}
+
 
 /**********************************************************************Navbar and Footer*/
 .petalia-logo {
@@ -157,7 +179,7 @@ body::before {
 }
 .card-img-top {
   width: 100%;
-  height: 250px; 
+  height: 390px; 
   object-fit: cover; 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

@@ -53,8 +53,30 @@ body::before {
   font-size: 1rem; 
 
 }
-.btn-hero{
-  margin-top: 60vh;
+/* Funky Hero Button */
+.btn-hero {
+  display: inline-block;
+  background-color: #b57edc; 
+  color: #fff; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 25px 5px 25px 5px; 
+  padding: 10px 30px; 
+  text-decoration: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease-in-out;
+  margin-top: 190px;
+}
+
+/* Hover Effect */
+.btn-hero:hover {
+  background-color: #a56cc1; 
+  transform: scale(1.05) rotate(-3deg); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Medium screens (768px and below) */

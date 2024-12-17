@@ -22,7 +22,7 @@
 
 <!-- Promo Banner and Delivery Info -->
 <div class="promo-banner bg-light py-2 text-center">
-    <p class="mb-0"><strong>Free Delivery</strong> on orders over $50!</p>
+    <p class="mb-0"><strong>Free Delivery</strong> on orders over £50!</p>
 </div>
 <!-- Main Content Container -->
 <div class="container-fluid bg-lavender-light py-5">
@@ -60,7 +60,7 @@
                         </a>
                         <div class="card-body text-center">
                             <h5 class="product-name">{{ product.name }}</h5>
-                            <p class="product-price text-primary font-weight-bold">${{ product.price }}</p>
+                            <p class="product-price text-primary font-weight-bold">£{{ product.price }}</p>
                             {% if product.rating %}
                                 <p class="small text-muted"><i class="fas fa-star text-warning"></i> {{ product.rating }} / 5</p>
                             {% else %}

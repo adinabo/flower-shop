@@ -4,7 +4,6 @@ body {
   background-position: left;
   height: 100vh; 
   position: relative;
-  overflow: hidden;
 }
 body::before {
   content: ""; 
@@ -28,16 +27,16 @@ body::before {
   background-position: center;
   height: 100vh; 
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: space-between; /* Distribute content */
+  flex-direction: column; 
+  justify-content: space-between; 
   align-items: center;
   text-align: center;
   padding: 2rem 1rem;
 }
 
 .hero-content {
-  margin-top: auto; /* Push content to center */
-  margin-bottom: auto; /* Keep vertical alignment */
+  margin-top: auto; 
+  margin-bottom: auto; 
 }
 
 /* Hero Button */
@@ -73,13 +72,13 @@ body::before {
 /* Large screens (min-width: 1200px) */
 @media (min-width: 1200px) {
   .hero-section {
-    height: 80vh; /* Slightly increase height for large screens */
+    height: 80vh; 
     padding: 6rem 2rem;
   }
 
   .btn-hero {
     font-size: 1.3rem;
-    padding: 12px 35px; /* Make button slightly larger */
+    padding: 12px 35px; 
     margin-top: 2rem;
   }
 }
@@ -102,7 +101,7 @@ body::before {
 /* Small screens (max-width: 768px) */
 @media (max-width: 768px) {
   .hero-section {
-    height: 60vh; /* Adjust height for smaller screens */
+    height: 60vh; 
     padding: 3rem 1rem;
   }
 
@@ -116,22 +115,22 @@ body::before {
 /* Extra Small screens (max-width: 576px) */
 @media (max-width: 576px) {
   .hero-section {
-    height: 50vh; /* Adjust height for very small mobile screens */
+    height: 50vh; 
     padding: 2rem 1rem;
   }
 
   .btn-hero {
     font-size: 0.8rem;
-    padding: 6px 12px; /* Smaller button */
+    padding: 6px 12px; 
     margin-top: 70px;
-    border-radius: 15px 5px 15px 5px; /* Tweak for a clean look */
+    border-radius: 15px 5px 15px 5px; 
   }
 }
 
 /* Ultra Small screens (max-width: 400px) */
 @media (max-width: 400px) {
   .hero-section {
-    height: 40vh; /* Compact height for ultra-small screens */
+    height: 40vh; 
     padding: 1.5rem 0.5rem;
   }
 
@@ -139,7 +138,7 @@ body::before {
     font-size: 0.7rem;
     padding: 5px 10px;
     margin-top: 1rem;
-    border-radius: 12px 4px 12px 4px; /* Compact radius */
+    border-radius: 12px 4px 12px 4px; 
   }
 }
 

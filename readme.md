@@ -21,7 +21,28 @@ Sustainability and Growth: By digitizing the flower shopping process, Petalia no
 
 ## UX Design Process
 
+The design of the website was crafted to deliver a seamless, visually appealing, and user-friendly experience tailored for an e-commerce flowershop. Inspiration was drawn from platforms like Pinterest and Dribbble, where I explored modern floral design layouts, color palettes, and UI components that resonate with elegance and simplicity.
+
+To ensure the website met user expectations, I considered:
+
+- Target Audience: Individuals looking for flower arrangements for special occasions, gifts, or wedding bouquets.
+- User Needs: Simple navigation, easy product discovery, and smooth checkout process.
+- Pain Points: Poor mobile responsiveness, cluttered designs, and complex user flows seen in similar sites. I decided to go with something more simple, but at the same time keep the floral design.
+
 ### Wireframes and Mock-ups 
+
+For this project, I've used tools like Figma for developing the wireframes for:
+
+-Homepage (Hero section, call-to-action, product highlights)
+-Product Listing Page (clear card layouts, sorting)
+-Checkout and Sign-Up Forms (minimalistic and modern design) These wireframes served as blueprints to -maintain clarity and consistency during development.
+
+Later in the project, I decided to change the hero image and background and design a new one in Canva.
+
+
+Color Palette: Soft pastel tones, including lavender and pale pink, were chosen to inspire a flower-inspired theme.
+
+Imagery: High-quality images of bouquets and floral arrangements were prioritized to enhance the aesthetic appeal and highlight the product offerings. Some of the bouquets were generated with AI as I struggled to find the (free) images I needed for my products.
 
 ### Design Decisions and Reasoning
 

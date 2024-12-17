@@ -40,11 +40,12 @@ Sustainability and Growth: By digitizing the flower shopping process, Petalia no
 - Bootstrap
 - Postgresql
 - Stripe
-- Figma, Balsamiq and Paint for wireframes
-- Git and Github 
-- Heroku 
+- Canva, Figma, Balsamiq and Paint for wireframes
+- Microsoft Designer for image editing
+- Git and Github for version control
+- Heroku for deploying
 - Chrome developer tools
-- Pexels and unsplash for images
+- Pexels, Unsplash and DeepAI for images
 
 
 ### Installation
@@ -167,5 +168,7 @@ One issue encountered when placing an order was that it didn't return checkout_s
 Mentor was not used at all for for this project so no guidance was received.
 
 
-All images have been taken from: Usplash
-Favicon was taken from: https://icons8.com/icons/set/
+All images have been taken from: 
+- Usplash and Pexels
+- Generated with AI https://deepai.org/
+- Favicon was taken from: https://icons8.com/icons/set/

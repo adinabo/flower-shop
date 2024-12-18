@@ -1,4 +1,7 @@
 
+## Table of Contents
+
+
 ## Petalia
 
 Live site: https://petalia-flowershop-05fb6f37adca.herokuapp.com/
@@ -44,22 +47,111 @@ Color Palette: Soft pastel tones, including lavender and pale pink, were chosen 
 
 Imagery: High-quality images of bouquets and floral arrangements were prioritized to enhance the aesthetic appeal and highlight the product offerings. Some of the bouquets were generated with AI as I struggled to find the (free) images I needed for my products.
 
-### Design Decisions and Reasoning
 
 ### Features
 
+- **User Authentication**: Handles user registration and login.
+- **Product Catalog**: Browse a selection of floral bouquets.
+- **Product Search and Filtering**: Easily find products (based on desired flower type for example)
+- **Product Details**: View high-quality images and a short description.
+- **Shopping Cart**: Add products to the cart, adjust quantities.
+- **Checkout Process**: Seamless checkout with order summary and payment integration.
+- **Order History**: Registered users can view their past orders.
+- **Responsive Design**: Optimized for various devices and screen sizes.
+- **Newsletter Subscription**: Stay updated with the latest promotions.
 
 ### Database Structure and Data Model
+The app employs a structured database schema to manage its core functionalities, ensuring efficient data storage and retrieval. Below is an overview of the primary models and their relationships:
+
+1. User Model:
+
+Utilizes Django's built-in User model to handle user authentication and profile management.
+
+2. Product Model:
+
+Represents the floral arrangements available for purchase. Key attributes include:
+
+- Name: The title of the product.
+- Description: Detailed information about the product.
+- Price: Monetary value of the product.
+- Image: Visual representation of the product.
+- Category: Classification to which the product belongs.
+- Stock Quantity: Number of items available in inventory.
+
+3. Category Model:
+
+Categorizes products to facilitate user navigation. Attributes include:
+
+- Name: The category's title.
+- Description: Details about the category.
+
+4. Order Model:
+
+Tracks customer purchases. Key attributes:
+
+- User: Associated with the User model, indicating the purchaser.
+- Order Date: Timestamp of when the order was placed.
+- Total Amount: Aggregate cost of the order.
+- Status: Current state of the order (e.g., pending, completed, shipped)
+
+5. OrderItem Model:
+
+Details individual products within an order. Attributes include:
+
+- Order: Linked to the Order model.
+- Product: Associated with the Product model.
+- Quantity: Number of units of the product ordered.
+- Price: Price of the product at the time of order.
+
+6. Cart Model:
+
+Manages items that users intend to purchase. Key attributes:
+
+- User: Linked to the User model.
+- Created Date: Timestamp of cart creation.
+- Updated Date: Timestamp of the last update to the cart.
+
+7. CartItem Model:
+
+Represents individual products in a user's cart. Attributes include:
+
+- Cart: Associated with the Cart model.
+- Product: Linked to the Product model.
+- Quantity: Number of units of the product in the cart.
+
+8. ShippingAddress Model:
+
+Stores delivery details for orders. Key attributes:
+
+- User: Linked to the User model.
+- Order: Associated with the Order model.
+- Address Line 1: Primary address information.
+- Address Line 2: Secondary address information (optional).
+- City: City of residence.
+- Postal Code: ZIP or postal code.
+- Country: Country of residence.
+
+One-to-Many:
+
+A User can have multiple Orders.
+A Category can encompass multiple Products.
+An Order can contain multiple OrderItems.
+A Cart can include multiple CartItems.
+
+Many-to-One:
+
+Multiple OrderItems can reference the same Product.
+Multiple CartItems can reference the same Product.
 
 ### Technologies Used
-- HTML
-- CSS
+- HTML5
+- CSS3
 - Python
 - Javascript 
 - Django
 - AWS for statics
 - Bootstrap
-- Postgresql
+- SQLite
 - Stripe
 - Canva, Figma, Balsamiq and Paint for wireframes
 - Microsoft Designer for image editing

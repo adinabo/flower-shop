@@ -1,5 +1,5 @@
 body {
-  background: url('/media/register.jpg') repeat cover;
+  background: url('/media/register.jpg') no-repeat cover;
   background-size: cover;
   background-position: left;
   height: 100vh; 
@@ -108,7 +108,7 @@ body::before {
   .btn-hero {
     font-size: 0.9rem;
     padding: 8px 15px;
-    margin-top: 70px; 
+    margin-top: 50px; 
   }
 }
 
@@ -153,10 +153,73 @@ body::before {
   letter-spacing: 1px;
 } 
 
+/* Footer */
 .bg-custom-footer {
-  background-color: rgba(131, 97, 185, 0.668);
-  color: #ffffff; 
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('/media/register.jpg') no-repeat center / cover;
+  color: #ffffff;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
+.bg-custom-footer h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bg-custom-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.bg-custom-footer a:hover {
+  color: #b57edc;
+  text-decoration: underline;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #b57edc;
+}
+
+#newsletter-form .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+#newsletter-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#newsletter-form .btn-light {
+  background-color: #b57edc;
+  border: none;
+  color: #000000;
+  transition: background-color 0.3s;
+}
+
+#newsletter-form .btn-light:hover {
+  background-color: #c6b5d3;
+}
+
+.bg-custom-footer hr {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bg-custom-footer .text-center p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
 }
 
 /************************************************************************Products****/

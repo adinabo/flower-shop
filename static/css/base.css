@@ -5,19 +5,6 @@ body {
   height: 100vh; 
   position: relative;
 }
-body::before {
-  content: ""; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/media/register.jpg') no-repeat center center;
-  background-size: cover;
-  opacity: 0.4; 
-  z-index: -1; 
-}
-
 /**********************************************************************Hero*/
 
 /* General Hero Section Styling */
@@ -247,7 +234,6 @@ body::before {
   border-top-right-radius: 8px;
 }
 
-/* Consistent card design */
 .product-card {
   border: none;
   border-radius: 8px;

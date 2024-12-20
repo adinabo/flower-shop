@@ -4,7 +4,8 @@
 {% block page_header %}
     {{ block.super }}
     <!-- Hero Start -->
-    <section class="hero-section  text-white text-center py-5">
+    <section class="hero-section text-white text-center py-5">
+        <h1 id="hero-heading" class="visually-hidden">Welcome to Petalia</h1>
         <div class="container">
             <a href="{% url 'products' %}" class="btn btn-light btn-lg px-5 btn-hero">Shop Now</a>
         </div>
@@ -15,6 +16,7 @@
 {% block content %}
 <!-- Achievements Section Start -->
 <section class="achievements-section py-2 bg-dark text-center">
+    <h1 id="hero-heading" class="visually-hidden">Achievements Scetion</h1>
     <div class="container">
         <div class="row g-4">
             <!-- Delivered Bouquets -->
@@ -76,8 +78,6 @@
             </div>
         </div>               
         <!-- Image Cluster End -->
-    </div>
-</div>
 <!-- About End -->
  <!-- Collections Section -->
  <hr class="section-divider">

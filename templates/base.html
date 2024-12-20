@@ -1,7 +1,4 @@
 {% load static %}
-
-<!doctype html>
-<html lang="en">
   <head>
     {% block meta %}
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -76,7 +73,7 @@
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <label for="search-box" class="visually-hidden">Search for a product</label>
-              <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search a product">
+              <input id="search-box" class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search a product">
               <div class="input-group-append">
                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                   <span class="icon">

@@ -212,7 +212,7 @@ So that I can complete my purchase without any concerns.
 
 
 ## Challenges encountered
-Once challenging mileston in my project was setting up the AWS bucket for statics. The issue here was mainly with the products as it took me a while to notice that when uploading a product using admin, it was changing the actual name of the file, making it different than what I had in the bucket. So with every product uploaded, I would have one name in admin, then one name in my bucket, both different than what I've uploaded. I have't found the cause, but I've manually changed that to make sure my product image is displaying correctly.
+Once challenging milestone in my project was setting up the AWS bucket for statics. The issue here was mainly with the products as it took me a while to notice that when uploading a product using admin, it was changing the actual name of the file, making it different than what I had in the bucket. So with every product uploaded, I would have one name in admin, then one name in my bucket, both different than what I've uploaded. I have't found the cause, but I've manually changed that to make sure my product image is displaying correctly.
 
 
 ## Automated Tests
@@ -251,6 +251,14 @@ Combines `test_stripe_secret_key_valid` and `test_stripe_public_key_valid` to en
 #### Test: `test_invalid_public_key`
 Verifies that an invalid **public key** results in a `StripeError` when attempting to create a `PaymentIntent`.
 
+### Validators
+
+- WS3 HTML Testing Validator
+Since the project was built using Django, the validator returned several errors and warnings that are specific to the templating system and Django’s dynamic content rendering. These errors do not indicate actual issues with the HTML but rather limitations of the validator when working with frameworks like Django.
+
+- 
+- 
+
 ### Stripe Elements Tests
 
 The Stripe Elements tests ensure the correct behavior of the **Stripe Elements** integration:
@@ -264,14 +272,38 @@ The Stripe Elements tests ensure the correct behavior of the **Stripe Elements**
 Since Jest runs in a Node.js environment and cannot interact with the actual Stripe API or load static files like `stripe_elements.js`, the **Stripe API** is **mocked** using Jest's mock functions. This allows us to simulate Stripe Elements' behavior and test the integration logic without making real API calls or loading external resources.
 
 ## Manual Tests
-1. 
-2. 
-3. 
+
+1. 6. UI/UX Testing
+Verified all links and navigation paths to ensure they redirect to the correct pages without broken links or errors.
+Tested navigation menus, footer links, and any embedded hyperlinks to confirm consistency.
+Gathered feedback from friends on the ease of navigation, the intuitiveness of the UI, and the clarity of messages.
+Ensured error messages were helpful and guided users to correct mistakes.
+
+2. Checking responsiveness in  Developer Tools
+
+Used Developer Tools in Chrome to simulate various screen sizes.
+Ensured the site layout adapts correctly for desktop, tablet, and mobile screen resolutions.
+Confirmed buttons, text, images, and other UI elements adjust and remain legible on smaller screens.
+
+3. Adding products to the card
+
+Added individual and multiple products to the shopping cart.
+Verified quantities and prices update accurately.
+Checked the cart functionality persists between sessions using cookies or server-side storage.
+Validated product removal works as expected.
+
 4. Placing an order
 One issue encountered when placing an order was that it didn't return checkout_success everytime an order was placed. When opening with Dev Tools, it did work on mobile but not on desktop. Also, the grand total was not being returned on the checkout success page. 
 
+5. Viewing the app on different mobile devices 
+Tested the site on a range of physical devices (IPhone 14, Android phones such as Samsung S24, S20, iPad).
+
 
 ### Future Features 
+
+1. User Wishlist - where the user can save their favourite products.
+2. Seasonal Promotions with countdown timers for ongoing deals.
+3. AI-Powered Chatbot that provides instant assistance to customers based on a limited number of questions they might ask.
 
 ### Credits
 

@@ -23,7 +23,8 @@ if not SECRET_KEY:
 
 # Security settings
 # DEBUG = False
-DEBUG = True
+
+DEBUG = False
 ALLOWED_HOSTS = [
     '8000-adinabo-flowershop-2kd2z6faimr.ws.codeinstitute-ide.net',
     'petalia-flowershop-05fb6f37adca.herokuapp.com',

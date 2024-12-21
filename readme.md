@@ -44,6 +44,11 @@ Scalability: Petalia serves as a scalable solution for small and medium-sized fl
 
 Sustainability and Growth: By digitizing the flower shopping process, Petalia not only simplifies operations but also provides valuable insights into customer preferences, enabling businesses to adapt and grow.
 
+<img src="media/index.png" alt="Home Page" style="width: 200px;" /> <img src="media/products.png" alt="Products" style="width: 200px;" />
+
+<img src="media/checkout.png" alt="Shopping Bag" style="width: 200px;" />
+<img src="media/confirmation.png" alt="Confirmation Message" style="width: 200px;" />
+
 ## UX Design Process
 
 The design of the website was crafted to deliver a seamless, visually appealing, and user-friendly experience tailored for an e-commerce flowershop. Inspiration was drawn from platforms like Pinterest and Dribbble, where I explored modern floral design layouts, color palettes, and UI components that resonate with elegance and simplicity.

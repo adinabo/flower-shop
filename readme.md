@@ -1,12 +1,34 @@
 
 ## Table of Contents
-
+## Table of Contents
+1. [Petalia](#petalia)
+2. [UX Design Process](#ux-design-process)
+   - [Wireframes and Mock-ups](#wireframes-and-mock-ups)
+   - [Features](#features)
+3. [Database Structure and Data Model](#database-structure-and-data-model)
+4. [Technologies Used](#technologies-used)
+5. [Installation](#installation)
+6. [Deployment](#deployment)
+7. [Customer User Stories](#customer-user-stories)
+8. [Bugs](#bugs)
+9. [Challenges Encountered](#challenges-encountered)
+10. [Automated Tests](#automated-tests)
+    - [Checkout Page Tests](#checkout-page-tests)
+    - [Stripe Integration Tests](#stripe-integration-tests)
+    - [Stripe Elements Tests](#stripe-elements-tests)
+11. [Manual Tests](#manual-tests)
+12. [Future Features](#future-features)
+13. [Credits](#credits)
 
 ## Petalia
 
+Petalia is a modern flower shop platform built using Django and integrated with Stripe for secure payments. 
+
 Live site: https://petalia-flowershop-05fb6f37adca.herokuapp.com/
 
-The Petalia Flower Shop app was created to provide a seamless, user-friendly platform for customers to explore and purchase floral arrangements online. With the increasing trend of e-commerce and the growing demand for personalized shopping experiences, the app aims to make flower shopping convenient, accessible, and enjoyable for all users.
+![Responsiveness](media/responsive.jpg)
+
+The app was created to provide a seamless, user-friendly platform for customers to explore and purchase floral arrangements online. With the increasing trend of e-commerce and the growing demand for personalized shopping experiences, the app aims to make flower shopping convenient, accessible, and enjoyable for all users.
 
 Key motivations for developing Petalia Flower Shop include:
 
@@ -42,11 +64,15 @@ For this project, I've used tools like Figma for developing the wireframes for:
 
 Later in the project, I decided to change the hero image and background and design a new one in Canva.
 
+<img src="media/wireframe1.png" alt="Wireframe 1" style="width: 100px;" /> <img src="media/wireframe2.png" alt="Wireframe 2" style="width: 200px;" />
+
+<img src="media/wireframe3.png" alt="Wireframe 3" style="width: 200px;" /> <img src="media/wireframe4.png" alt="Wireframe 4" style="width: 200px;" />
+
+An e-commerce Bootstrap theme served as inspiration and a design guide for the layout and structure of my products page, specifically drawing from [this template](https://startbootstrap.com/template/shop-homepage).
 
 Color Palette: Soft pastel tones, including lavender and pale pink, were chosen to inspire a flower-inspired theme.
 
-Imagery: High-quality images of bouquets and floral arrangements were prioritized to enhance the aesthetic appeal and highlight the product offerings. Some of the bouquets were generated with AI as I struggled to find the (free) images I needed for my products.
-
+Imagery: High-quality images of bouquets and floral arrangements were prioritized to enhance the aesthetic appeal and highlight the product offerings. In some cases, AI-generated bouquets were utilized due to challenges in sourcing suitable free images.
 
 ### Features
 
@@ -61,6 +87,7 @@ Imagery: High-quality images of bouquets and floral arrangements were prioritize
 - **Newsletter Subscription**: Stay updated with the latest promotions.
 
 ### Database Structure and Data Model
+
 The app employs a structured database schema to manage its core functionalities, ensuring efficient data storage and retrieval. Below is an overview of the primary models and their relationships:
 
 1. User Model:
@@ -131,17 +158,21 @@ Stores delivery details for orders. Key attributes:
 - Postal Code: ZIP or postal code.
 - Country: Country of residence.
 
-One-to-Many:
+One-to-Many relationship:
 
 A User can have multiple Orders.
 A Category can encompass multiple Products.
 An Order can contain multiple OrderItems.
 A Cart can include multiple CartItems.
 
-Many-to-One:
-
+Many-to-One relationship:
 Multiple OrderItems can reference the same Product.
 Multiple CartItems can reference the same Product.
+
+
+For reference, see diagram below: 
+
+<img src="media/db_diagram.png" alt="Database diagram" width="400" />
 
 ### Technologies Used
 - HTML5

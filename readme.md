@@ -253,10 +253,10 @@ Verifies that an invalid **public key** results in a `StripeError` when attempti
 
 ### Validators
 
-- WS3 HTML Testing Validator
+- WS3 HTML Testing Validator https://validator.w3.org/
 Since the project was built using Django, the validator returned several errors and warnings that are specific to the templating system and Django’s dynamic content rendering. These errors do not indicate actual issues with the HTML but rather limitations of the validator when working with frameworks like Django.
 
-- 
+- CSS After testing the CSS code with Jigsaw Validator, there were no errors found.
 - 
 
 ### Stripe Elements Tests

@@ -18,7 +18,7 @@
 12. [Future Features](#future-features)
 13. [Credits](#credits)
 
-## Petalia
+# Petalia - from the heart of nature
 
 Petalia is a modern flower shop platform built using Django and integrated with Stripe for secure payments. 
 
@@ -30,17 +30,17 @@ The app was created to provide a seamless, user-friendly platform for customers 
 
 Key motivations for developing Petalia Flower Shop include:
 
-Accessibility: Traditional flower shops often have limited operating hours and inventory visibility. This app allows users to shop for flowers anytime and view available arrangements in real time.
+**Accessibility**: Traditional flower shops often have limited operating hours and inventory visibility. This app allows users to shop for flowers anytime and view available arrangements in real time.
 
-Convenience: Busy lifestyles can make it difficult for customers to visit physical stores. The app offers a streamlined browsing and purchasing process, ensuring users can select and order flowers in just a few clicks.
+**Convenience**: Busy lifestyles can make it difficult for customers to visit physical stores. The app offers a streamlined browsing and purchasing process, ensuring users can select and order flowers in just a few clicks.
 
-Customization: Flowers are often purchased for special occasions or as gifts, requiring unique arrangements. Petalia includes features that allow users to personalize their orders, enhancing the customer experience.
+**Customization**: Flowers are often purchased for special occasions or as gifts, requiring unique arrangements. Petalia includes features that allow users to personalize their orders, enhancing the customer experience.
 
-Aesthetic Appeal: As a flower shop, showcasing the beauty of the products is crucial. The app was designed with a clean and visually appealing interface to highlight the vibrancy and elegance of the floral arrangements.
+**Aesthetic Appeal**: As a flower shop, showcasing the beauty of the products is crucial. The app was designed with a clean and visually appealing interface to highlight the vibrancy and elegance of the floral arrangements.
 
-Scalability: Petalia serves as a scalable solution for small and medium-sized florists looking to expand their reach online without requiring a significant investment in standalone e-commerce infrastructure.
+**Scalability**: Petalia serves as a scalable solution for small and medium-sized florists looking to expand their reach online without requiring a significant investment in standalone e-commerce infrastructure.
 
-Sustainability and Growth: By digitizing the flower shopping process, Petalia not only simplifies operations but also provides valuable insights into customer preferences, enabling businesses to adapt and grow.
+**Sustainability and Growth**: By digitizing the flower shopping process, Petalia not only simplifies operations but also provides valuable insights into customer preferences, enabling businesses to adapt and grow.
 
 <img src="media/index.png" alt="Home Page" style="width: 200px;" /> <img src="media/products.png" alt="Products" style="width: 200px;" />
 
@@ -52,12 +52,12 @@ The design of the website was crafted to deliver a seamless, visually appealing,
 
 To ensure the website met user expectations, I considered:
 
-- Target Audience: Individuals looking for flower arrangements for special occasions, gifts, or wedding bouquets.
-- User Needs: Simple navigation, easy product discovery, and smooth checkout process.
-- Pain Points: Poor mobile responsiveness, cluttered designs, and complex user flows seen in similar sites. I decided to go with something more simple, but at the same time keep the floral design.
+- **Target Audience**: Individuals looking for flower arrangements for special occasions, gifts, or wedding bouquets.
+- **User Needs**: Simple navigation, easy product discovery, and smooth checkout process.
+- **Accessibility** By incorporating ARIA roles and labels, the application supports better usability and aligns with WCAG guidelines, enhancing the experience for users with disabilities.
+- **Pain Points**: Poor mobile responsiveness, cluttered designs, and complex user flows seen in similar sites. I decided to go with something more simple, but at the same time keep the floral design.
 
 ### Wireframes and Mock-ups 
-
 
 For this project, I utilized tools like Figma, Canva, Balsamiq, and Paint to create wireframes and conceptualize the design. I also experimented with various mobile apps to sketch a logo on my phone, but ultimately chose to keep the design simple and straightforward. 
 
@@ -78,7 +78,6 @@ As the project progressed, I decided to redesign the hero image and form backgro
 Initial banner wireframe vs final choice: 
 
 <img src="media/wireframe_banner.jpg" alt="Banner initial wireframe" style="width: 200px;" /> <img src="media/wireframe2.png" alt="Wireframe 2" style="width: 200px;" />
-
 
 
 <img src="media/wireframe1.png" alt="Wireframe 1" style="width: 100px;" /> <img src="media/wireframe4.png" alt="Wireframe 4" style="width: 200px;" />
@@ -210,6 +209,7 @@ For reference, see diagram below:
 
 
 ### Installation
+
 To install and run the app locally:
 
 Clone the repository git clone https:// https://github.com/adinabo/petalia-flowershop
@@ -226,42 +226,45 @@ Open the app
 3. Initialize a Git Repository: If not already done, initialize a Git repository and commit all changes.
 4. Create a New Heroku App: Use the Heroku dashboard or CLI to create a new app.
 5. Connect the App to Heroku: Connect the Heroku app to the GitHub repository or push directly from the command line.
-6. Configure Environment Variables: Set up the necessary environment variables in the Heroku dashboard under the "Settings" tab.
+6. Configure Environment Variables: Set up the necessary environment variables in the Heroku dashboard.
 7. Deploy the Application: Deploy the app either via GitHub integration or manually by pushing to Heroku using the git push heroku main command.
 8. Monitor and Debug: Use the Heroku logs to monitor the app’s performance and debug any issues that may arise.
 
 ## Customer User Stories
 
-1. As a customer,I want to browse the available flower arrangements, so that I can select a bouquet that suits my needs.
-
-2. As a customer,I want to search for flowers by category, color, or occasion, sSo that I can quickly find the most suitable options.
-
+1. As a customer, I want to browse the available flower arrangements, so that I can select a bouquet that suits my needs.
+2. As a customer,I want to search for flowers by category, color, or occasion, so that I can quickly find the most suitable options.
 3. As a customer, I want to see detailed information about each flower arrangement (e.g., size, type, and price), so that I can make an informed purchase.
-
 4. As a customer, I want to customize my bouquet with specific flowers or a personal message, so that I can make the gift more meaningful.
-
 5. As a customer, I want to add items to my shopping cart and review my selections, so that I can easily manage my order before checkout.
-
 6. As a customer, I want to securely enter my payment and delivery details,
 So that I can complete my purchase without any concerns.
-
-7. As a customer, I want to track my order history, so that I know which orders I've places.
-
+7. As a customer, I want to track my order history, so that I know which orders I've placed.
 8. As a visitor, I want to explore the website without creating an account, so that I can decide if I want to make a purchase.
-
 9. As a user, I want to create an account and log in securely, so that I can save my personal details and order history.
-
-10. As a usr, I want the app to be mobile-friendly and responsive, so that I can easily shop on my phone or tablet.
-
+10. As a user, I want the app to be mobile-friendly and responsive, so that I can easily shop on my phone or tablet.
 11. I want the website to load quickly and run smoothly, so that I have a pleasant browsing experience.
 
 
 ### Bugs 
 
+- The initial loading time seems slightly longer than expected, particularly for the home page. This could be due to the number of large images and resources being loaded, even though images have been resized.
+
+- Inconsistent Hero Button Placement: The "Shop Now" button in the hero section displays inconsistent positioning on smaller screens. While this does not significantly impact functionality, it affects visual consistency. Addressing this alignment issue is planned for future updates.
+
+- Register and Login Page Styling: The styling on the register and login pages could be enhanced for a more polished and cohesive design.
+
+- The "Add to Bag" toast notification would benefit from an exit button or a reduced display time to improve user experience. Adjustments to this feature are planned for future iterations.
+
+- A scrollable section appears on the shopping bag page, negatively impacting the user experience. This issue will be addressed in future updates to ensure seamless navigation and usability.
 
 ## Challenges encountered
-Once challenging milestone in my project was setting up the AWS bucket for statics. The issue here was mainly with the products as it took me a while to notice that when uploading a product using admin, it was changing the actual name of the file, making it different than what I had in the bucket. So with every product uploaded, I would have one name in admin, then one name in my bucket, both different than what I've uploaded. I have't found the cause, but I've manually changed that to make sure my product image is displaying correctly.
 
+A significant challenge in my project was configuring the AWS bucket for static files. The main issue involved product images; when uploading through the admin panel, the file names would automatically change, causing a mismatch between the admin panel and the bucket. It also took quite some time for my statics to show in the bucket, which made me think initially that there might be an issue with my bucket configuration.
+
+Another issue was with the credit card field on the checkout page. An iframe blocked the form submission, initially leading me to suspect a problem with Stripe. After running tests on Stripe’s functionality, I identified the issue as the iframe overlay obstructing the submission button.
+
+Additionally, I encountered difficulties with the order of configurations in settings.py. It took time to realize that the sequence of settings impacted the app’s behavior rather than an issue with the code itself.
 
 ## Automated Tests
 

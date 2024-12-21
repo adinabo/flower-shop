@@ -1,5 +1,3 @@
-
-## Table of Contents
 ## Table of Contents
 1. [Petalia](#petalia)
 2. [UX Design Process](#ux-design-process)
@@ -46,8 +44,7 @@ Sustainability and Growth: By digitizing the flower shopping process, Petalia no
 
 <img src="media/index.png" alt="Home Page" style="width: 200px;" /> <img src="media/products.png" alt="Products" style="width: 200px;" />
 
-<img src="media/checkout.png" alt="Shopping Bag" style="width: 200px;" />
-<img src="media/confirmation.png" alt="Confirmation Message" style="width: 200px;" />
+<img src="media/checkout.png" alt="Shopping Bag" style="width: 190px;" /><img src="media/confirmation.png" alt="Confirmation Message" style="width: 190px;" />
 
 ## UX Design Process
 
@@ -61,19 +58,34 @@ To ensure the website met user expectations, I considered:
 
 ### Wireframes and Mock-ups 
 
-For this project, I've used tools like Figma for developing the wireframes for:
 
--Homepage (Hero section, call-to-action, product highlights)
--Product Listing Page (clear card layouts, sorting)
--Checkout and Sign-Up Forms (minimalistic and modern design) These wireframes served as blueprints to -maintain clarity and consistency during development.
+For this project, I utilized tools like Figma, Canva, Balsamiq, and Paint to create wireframes and conceptualize the design. I also experimented with various mobile apps to sketch a logo on my phone, but ultimately chose to keep the design simple and straightforward. 
 
-Later in the project, I decided to change the hero image and background and design a new one in Canva.
+Initial logo wireframe :
+<img src="media/wireframe_logo.png" alt="Initial logo" style="width: 100px;" />
 
-<img src="media/wireframe1.png" alt="Wireframe 1" style="width: 100px;" /> <img src="media/wireframe2.png" alt="Wireframe 2" style="width: 200px;" />
 
-<img src="media/wireframe3.png" alt="Wireframe 3" style="width: 200px;" /> <img src="media/wireframe4.png" alt="Wireframe 4" style="width: 200px;" />
+The wireframes focused on key pages, including:
 
-An e-commerce Bootstrap theme served as inspiration and a design guide for the layout and structure of my products page, specifically drawing from [this template](https://startbootstrap.com/template/shop-homepage).
+- **Homepage**: Highlighting the hero section, call-to-action elements, and featured products.
+- **Product Listing Page**: Featuring clear card layouts and sorting options for easy navigation.
+- **Checkout and Sign-Up Forms**: Minimalistic and modern forms to ensure a seamless user experience.
+
+These wireframes served as essential blueprints, ensuring clarity and consistency throughout the development process.
+
+As the project progressed, I decided to redesign the hero image and form background using Canva, adding a fresh and cohesive aesthetic to the overall site, as I felt that it needed a modern touch.
+
+Initial banner wireframe vs final choice: 
+
+<img src="media/wireframe_banner.jpg" alt="Banner initial wireframe" style="width: 200px;" /> <img src="media/wireframe2.png" alt="Wireframe 2" style="width: 200px;" />
+
+
+
+<img src="media/wireframe1.png" alt="Wireframe 1" style="width: 100px;" /> <img src="media/wireframe4.png" alt="Wireframe 4" style="width: 200px;" />
+
+An e-commerce Bootstrap theme served as inspiration and a design guide for the layout and structure of my products page, specifically drawing from [this template](https://startbootstrap.com/template/shop-homepage).  
+
+<img src="media/wireframe3.png" alt="Wireframe 3" style="width: 200px;" />
 
 Color Palette: Soft pastel tones, including lavender and pale pink, were chosen to inspire a flower-inspired theme.
 
